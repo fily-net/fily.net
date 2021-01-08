@@ -1,0 +1,7 @@
+[2015-05-29 20:44:33] insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (107,'施工队伍会签',',16,',2);
+[2015-05-29 20:44:33] insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (107,135,'施工科科长审核',',137,',0,1,10,',16,','',',2006,',1,1,2006,2);
+[2015-05-29 20:44:33] insert into PRO_SC_COST (jiSuanId,guanCaiId,guiGeId,num,note,proId,type,cPerson) values ('623','629','640',32,'test',5,0,2);
+[2015-05-29 20:44:33] insert into PRO_SC_COST (jiSuanId,guanCaiId,guiGeId,num,note,proId,type,cPerson) values ('624','630','640',58,'asdf',5,0,2);
+[2015-05-29 20:44:33] insert into PRO_SC_COST (jiSuanId,guanCaiId,guiGeId,num,note,proId,type,cPerson) values ('625','631','640',21,'fasd',5,0,2);
+[2015-05-29 21:15:52] insert into PRO_EXEC_TEAM (companyName,QCN,QL,legalPerson,responsePerson,contact,mobilphone,business,cPerson) values ('上海城投水务集团','QC001','1','王','留','王','14890987689','主要经营。。',2);
+[2015-05-29 22:11:43] insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,ext,type,state,users,roles,owner,parentPath,treeOrder,depth,pid,cPerson) values (107,137,'副经理批准',',136,',2007,'',12,1,',5,',',',',5,',',2006,',2,1,2006,16);

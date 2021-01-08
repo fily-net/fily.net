@@ -1,0 +1,114 @@
+﻿.main-body .ad {
+    text-align:center;
+    padding:68px 0px;
+    font-family: 'AmbleRegular';
+}
+
+.main-body .ad h1 {
+    font-size: 3em;
+    color: #333;
+}
+
+.main-body .ad h2 {
+    font-size: 2em;
+    color: #555;
+    padding: 1% 0 4%;
+}
+
+.main-body .dev {
+    
+}
+
+.main-body .title {
+    border-bottom:1px solid #e2e2e2;
+    padding:10px 0px;
+    font-size:28px;
+}
+
+.main-body .content {
+    padding:10px 0px;
+    font-size:20px;
+    line-height:30px;
+    text-indent:40px;
+}
+
+.main-body .content {
+    overflow:hidden;
+    padding:10px 0px;
+}
+
+.main-body .item-list {
+    padding:5px;
+}
+
+.main-body .item-list li {
+    border:1px solid #e2e2e2;
+    padding:10px;
+    line-height:40px;
+    margin:8px;
+}
+
+
+
+.main-body .item-list li .item-title {
+    border-bottom:1px solid #e2e2e2;
+    font-size:20px;
+    color:#009c95;
+}
+
+.main-body .item-list li .item-detail {
+    text-indent:35px;
+}
+
+
+.main-body .user-list {
+        
+}
+
+.main-body .user-list li {
+    margin:5px;
+    padding:25px 5px;
+    overflow:hidden;
+}
+
+.main-body .user-list li .avatar {
+    border-radius:50%;
+    width:100px;
+    height:100px;
+    position:absolute;
+}
+
+.main-body .user-list li .detail {
+    border-radius:50%;
+    position:relative;
+    left:120px;
+    text-indent:0px;
+}
+
+.main-body .user-list li .detail .detail-title {
+    font-size:22px;
+    font-weight:bold;
+    line-height:40px;
+}
+.main-body .user-list li .detail .detail-desc {
+    line-height:28px;
+}
+
+
+
+
+.main-body .project-list li {
+    margin:25px;
+    padding: 20px;
+    overflow:hidden;
+    border:1px solid #e2e2e2;
+}
+
+.main-body .project-list li div {
+    text-indent:0px;
+    line-height:40px;
+}
+
+.main-body .project-list li a {
+   
+}

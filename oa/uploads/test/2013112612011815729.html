@@ -1,0 +1,50 @@
+<style type="text/css">
+.line_3d{
+    -webkit-animation-name:y-ain;
+    -webkit-animation-duration:5s;
+    -webkit-animation-timing-function:ease;
+    -webkit-animation-iteration-count:infinite;
+    }
+       
+@-webkit-keyframes y-ain{
+    0%{-webkit-transform:rotateY(0deg);}
+    50%{-webkit-transform:rotateY(180deg);}
+    100%{-webkit-transform:rotateY(360deg);}
+    }
+.line_3d{
+    -webkit-animation-name:y-ain;
+    -webkit-animation-duration:5s;
+    -webkit-animation-timing-function:ease;
+    -webkit-animation-iteration-count:infinite;
+    }
+    
+.ain_3d{
+    -webkit-animation-name:x-ain;
+    -webkit-animation-duration:7s;
+    -webkit-animation-timing-function:ease-in;
+    -webkit-animation-iteration-count:infinite;
+    }
+    
+@-webkit-keyframes y-ain{
+    0%{-webkit-transform:rotateY(0deg);}
+    50%{-webkit-transform:rotateY(180deg);}
+    100%{-webkit-transform:rotateY(360deg);}
+    }
+    
+@-webkit-keyframes x-ain{
+    0%{-webkit-transform:rotateX(180deg);}
+    50%{-webkit-transform:rotateX(0deg);}
+    100%{-webkit-transform:rotateX(360deg);}
+    }
+</style>
+<body>
+
+<div id="demo_3d" class="ain_3d">
+    <div id="img_box_1" class="line_3d">
+        <img src="guide.png" width="300" height="200" />
+        <img src="guide.png" alt="" width="300" height="200" />
+        <img src="guide.png" alt="" width="300" height="200" />
+    </div>
+</div>
+
+</body>

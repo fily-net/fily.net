@@ -1,0 +1,3 @@
+insert into SYS_CM_FORUM (title,type,link,content,pid,cPerson) values ('test','138','','test',0,2);
+insert into SYS_CM_FORUM (content,pid,parentPath,treeOrder,depth,cPerson) values ('test','1',',1,',1,1,2);
+update SYS_CM_FORUM set mPerson=2, mTime=getdate(),sons=sons+1 where id=1;

@@ -1,0 +1,9 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Footer.ascx.cs" Inherits="Footer" %>
+<div class="content">
+    <ul class="ulCon">
+        <li class="li0"><a href="Allcyl.aspx"></a></li>
+        <li class="li1"><a href="javascript:;"></a></li>
+        <li class="li2"><a href="javascript:;"></a></li>
+    </ul>
+</div>
+<div class="footer">版权所有:赤峰东黎绒毛制品有限公司 All Rights Reserved:SUNRISE CASHMERE INC.技术支持:天启网络 网站备案号:蒙ICP备 13003182号</div>

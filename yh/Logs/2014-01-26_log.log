@@ -1,0 +1,12 @@
+[2014-01-26 11:55:32] update XD_IMDB_MOVICE set mPerson=150, mTime=getdate(),link=replace(link,',97','') where id=20;
+[2014-01-26 11:55:45] update XD_IMDB_MOVICE set mPerson=150, mTime=getdate(),link=replace(link,',96','') where id=20;
+[2014-01-26 11:57:31] update XD_IMDB_MOVICE set mPerson=150, mTime=getdate(),link=replace(link,',99','') where id=17;
+[2014-01-26 14:18:57] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('Koala.jpg','2014012602185718362','jpg','Koala','test',780831,1,',1,4,',48,2,4,);
+[2014-01-26 14:18:57] update SYS_CM_FILES set mPerson=, mTime=getdate(),sons=sons+1 where id=4;
+[2014-01-26 14:18:58] update XD_IMDB_MOVICE set mPerson=, mTime=getdate(),link=link+',' where id=10;
+[2014-01-26 14:19:16] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('Tulips.jpg','2014012602191614504','jpg','Tulips','test',620888,1,',1,4,',48,2,4,150);
+[2014-01-26 14:19:16] update SYS_CM_FILES set mPerson=150, mTime=getdate(),sons=sons+1 where id=4;
+[2014-01-26 14:19:16] update XD_IMDB_MOVICE set mPerson=150, mTime=getdate(),link=link+'100,' where id=6;
+[2014-01-26 16:04:35] insert into SYS_CM_FN_TREE (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('50','导入数据',',1,20,50,',2,3,150);
+[2014-01-26 16:04:35] update SYS_CM_FN_TREE set mPerson=150, mTime=getdate(),sons=sons+1 where id=50;
+[2014-01-26 16:14:25] update SYS_CM_FN_TREE set mPerson=150, mTime=getdate(),url='View/xd/PageManager【．]js' where id=52;

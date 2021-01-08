@@ -1,0 +1,2 @@
+[2015-07-27 10:53:58] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('129新网页.jpg','2015072710535814567','jpg','129新网页','test',4861176,1,',1,4,',136,2,4,2);
+[2015-07-27 10:54:03] insert into SYS_BUGS_HISTORY (note,link,bugId,cPerson) values ('tet',',212,','1',2);

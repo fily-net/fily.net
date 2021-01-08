@@ -1,0 +1,156 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>问卷调查-问卷列表</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/base.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+        <style type="text/css">
+            html{height: 100%;}
+            html, body, ul, li{margin: 0;padding: 0;border: 0;outline: 0;}
+            ul, li {list-style:none;}
+            .main {position: absolute; width:100%; height:100%; overflow: hidden; top:0px;left:0px;font-size: 14px;color: #555;}
+            .header 
+            {
+                position:absolute; font-size:12px; width:100%; top:0px;left:0px; overflow:hidden; -webkit-user-select:none; -khtml-user-select:none; -moz-user-focus:ignore; -moz-user-select:none; -moz-user-input:disabled;
+                height: 43px;
+                border-top: 1px solid #f6986f;
+                background: #e05d23;
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f57741),color-stop(100%,#e05d23));
+                background: -webkit-linear-gradient(top,#f57741 0,#e05d23 100%);
+                background: linear-gradient(to bottom,#f57741 0,#e05d23 100%);
+            }
+            .header>.header-arrow{position: absolute;left: 0;top: -1px;z-index: -1;display: inline-block;width: 4px;height: 4px;background: #000;}
+            .header>.header-list{z-index: 10;height: 43px;line-height: 43px; padding: 0 10px;color: #fff;}
+            .header>.header-list li:first-child {position: absolute;top: 0;left: 10px;width: 31px;z-index: 3; }
+            .header>.header-list li:nth-child(2) {width: 100%;font-size: 18px;text-align:center;font-weight: 600;}
+            .header>.header-list li:last-child {position: absolute;top: 0;right: 10px;width: 95px;text-align: right;}
+            .header>.header-arrow-right{left: auto;right: 0;}
+            .header>.header-mask{position: absolute;left: 0;top: 0;width: 100%;height: 43px;background-size: 2px 2px;opacity: .3;}
+            .page-body { position:absolute; width:100%;display:table-row;left:0px; right:0px; overflow:auto;top:43px;bottom:38px;}
+            .page-body>DIV{ font-size:13px; overflow: auto; border-radius: 5px; -webkit-border-radius: 5px;width:100%; height:100%; }
+            .page-body>DIV>.title{ font-weight:bold; margin-top:10px; }
+            .page-body .type{ float:right;width:16px;height:16px; display:inline-block; }
+            .page-body .type.t-1{ background: url("images/input/normal-rb-unchecked.png") -3px -3px no-repeat scroll transparent; }
+            .page-body .type.t-2{ background: url("images/complex/glyph/glyphicons-halflings.png") -144px -72px no-repeat scroll transparent; }
+            .page-body .type.t-3{ background: url("images/complex/glyph/glyphicons-halflings.png") 0 -72px no-repeat scroll transparent;  }
+            .page-body .error-focus{ -webkit-box-shadow: 0px 0px 6px #DF2D3B;-moz-box-shadow: 0px 0px 5px #DF2D3B;box-shadow: 0px 0px 5px #DF2D3B; }
+            .foot { background-color:#FFF; position:absolute;width:100%;display:table-row;left:0px;right:0px;overflow:hidden;bottom:0px;height:38px;line-height:50px;-moz-border-radius: 0px 0px 5px 5px;-webkit-border-radius: 0px 0px 5px 5px;border-radius: 0px 0px 5px 5px;box-shadow: 0 0 3px #a1afb3;box-shadow: 0 1px 9px #9c9c9c;}
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="header-list">
+                    <ul>
+                        <li></li>
+                        <li id="title"></li>
+                        <li><a class="btn_ico_bg" style="width:50px; float:right;" onclick="window.submit(this);">提交</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page-body Waterfall scroll-webkit"><ul id="item-body" class="ListItem"></ul></div>
+            <div class="foot"><a class="_process"><b class="normal" id="process-value" style="width:0%;">0%</b></a></div>
+        </div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_event_handler.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var paperId = $.Util.url2Obj().getParameter('guid');
+            var _valAry, _eBody = $('item-body'), _itemAry = [], _count = 0, _checkObj = {};
+            var _html = '<div class="title"><div class="_title">{0}<span class="type t-{1}"></span></div></div><div class="content"></div>';
+            function init() {
+                $.Util.ajax({
+                    url: '../meeko.aspx',
+                    ifCheckCookie: false,
+                    args: 'm=SYS_CM_OA&action=loadPaperAllTopics&paperGUID=' + paperId + '&dataType=json',
+                    onSuccess: function (d) {
+                        var _pInfo = $.JSON.decode(d.get(1) || '{}');
+                        paperId = _pInfo.id;
+                        $('title').h(_pInfo.nodeName); _valAry = eval(d.get(0).replaceAll('"[', '[').replaceAll(']"', ']'));
+                        for (var i = 0, _len = _valAry.length; i < _len; i++) { addTopicItem(_valAry[i]); }
+                    },
+                    onError: function (d) { MTips.show(d.data || '加载失败', 'error'); }
+                });
+            }
+            function addTopicItem(obj) {
+                var _temp = _eBody.adElm('', 'li').h(_html.format(obj.title, obj.type)), _tempP = _temp.fc().ns(), _type = +obj.type, _sons = obj.items;
+                switch (_type) {
+                    case 1: _type = 'Radios'; break;
+                    case 2: _type = 'CheckBoxs'; break;
+                    case 3: _type = 'TextArea'; break;
+                }
+                var fItem = new $.UI.FormItem({ p: _tempP, owner: _temp, name: obj.id, comType: _type, ifHead: false, ifFoot: false, sons: _sons, css: 'width:100%;', onChange: onFormItemChange });
+                fItem.doms.eBody.css('width:100%;').fc().css('width:100%;'); fItem.p = _temp; _itemAry.push(fItem);
+            }
+
+            function onFormItemChange(obj) {
+                if (!_checkObj[obj.Name]) {
+                    _checkObj[obj.Name] = true; _count++;
+                } else {
+                    var _val = obj.FormItem.getValue();
+                    if (!_val || _val == ',') { _checkObj[obj.Name] = false; _count--; }
+                }
+                var _len = _itemAry.length, _val = (_count / _len).toFixed(2) * 100, _cn = 'normal';
+                if (_val == 100) { _cn = 'over'; }
+                $('process-value').css('width:' + _val + '%;').h(_count + '|' + _len).cn(_cn);
+                obj.FormItem.get('owner').css('border: 1px solid #E2E2E2').dc('error-focus');
+            }
+
+            function submit(e) {
+                var _fiAry = [
+                    { name: 'name', placeholder: '姓名', ifHead: false, comType: 'Input', req: true, width: 200, sErr: '姓名必填' },
+                    { name: 'email', placeholder: '邮箱', ifHead: false, comType: 'Input', req: true, width: 200, regTemplate: 'email', sErr: '邮箱格式错误, 如admin@gmail.com' },
+                    { name: 'phoneNumber', placeholder: '手机号', ifHead: false, comType: 'Input', req: true, width: 200, regTemplate: 'integer', sErr: '手机号只能是数字' },
+                    { name: 'qq', placeholder: 'QQ号', ifHead: false, comType: 'Input', req: true, width: 200, regTemplate: 'integer', sErr: 'QQ号只能是数字' }
+                ], _itemVal = [];
+                for (var i = 0, _len = _itemAry.length; i < _len; i++) {
+                    var _item = _itemAry[i], _val = _item.getValue().trim(), _txt = _item.getText().trim();
+                    if (!_item.get('isChange') || !_val || _val == ',') {
+                        _item.p.css('border: 1px solid #DF2D3B;').ac('error-focus'); MTips.show('所有选项必填', 'error');
+                        return false;
+                    } else {
+                        _item.p.css('border: 1px solid #E2E2E2');
+                    }
+                    if (_item.type == 'CheckBoxs') {
+                        var _tagAry = _txt.split(','), _tAry = [];
+                        for (var _t = 0; _t < _tagAry.length; _t++) { _tAry.push('<span class="tag">' + _tagAry[_t] + '</span>'); }
+                        _txt = _tAry.join('');
+                    }
+                    _itemVal.push(paperId + '\u0001' + _item.name + '\u0001' + _val + '\u0001' + _txt);
+                }
+                var arrowTips = $.initArrowTips({ Owner: $(e) }, 'width:212px;padding:5px 10px 5px 10px;');
+                var _form = $.global.arrowTips.init({
+                    type: 'Form',
+                    items: _fiAry,
+                    ifFixedHeight: false,
+                    btnItems: [
+                        { name: 'FORM-SYS-SUBMIT', text: '提交', skin: 'Button-blue', css: 'margin-left:162px;' }
+                    ],
+                    onSubmit: function (obj) {
+                        var _val = obj.Data.IValue;
+                        $.Util.ajax({
+                            url: 'http://www.creativehub.cn/xd-copy/meeko.aspx',
+                            //url: 'http://192.168.0.222/pro_meeko/meeko.aspx',
+                            ifCheckCookie: false,
+                            args: 'm=SYS_CM_OA&action=submitPaper&json=' + $.JSON.encode(_val) + '&items=' + _itemVal.join('\u0002'),
+                            onSuccess: function () {
+                                MTips.show('提交成功', 'ok'); if ($.global.arrowTips) { $.global.arrowTips.remove(); $.global.arrowTips = null; };
+                                setTimeout(function () { window.location.href = 'paper-list.html'; }, 1000);
+                            }
+                        });
+                        return false;
+                    }
+                }, true);
+            }
+            window.submit = submit;
+            init();
+        });
+    </script>
+</html>

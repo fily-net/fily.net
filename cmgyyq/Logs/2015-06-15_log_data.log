@@ -1,0 +1,2 @@
+insert into SYS_CM_FN_TREE (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('5','节假日',',1,2,5,',3,3,2);
+insert into SYS_CM_FN_TREE (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('58','节假日管理',',1,2,5,58,',1,4,2);

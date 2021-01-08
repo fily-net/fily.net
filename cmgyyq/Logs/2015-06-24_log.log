@@ -1,0 +1,2 @@
+[2015-06-24 10:18:09] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('100.png','2015062410180910830','png','100','test',30278,1,',1,4,',115,2,4,2);
+[2015-06-24 10:18:13] insert into SYS_CM_NOTICE (title,bTime,eTime,link,content,cPerson) values ('施工公告测试','2015-06-16','2015-06-30',',188,','test',2);

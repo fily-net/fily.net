@@ -1,0 +1,3 @@
+[2014-03-13 13:28:18] insert into SYS_CM_FILES (nodeName,parentPath,treeOrder,depth,pid,cPerson) values ('测试目录',',1,2,8,',6,3,8,2);
+[2014-03-13 13:28:20] insert into SYS_CM_FILES (nodeName,parentPath,treeOrder,depth,pid,cPerson) values ('测试目录',',1,2,8,',7,3,8,2);
+[2014-03-13 13:29:20] insert into SYS_CM_FILES (nodeName,parentPath,treeOrder,depth,pid,cPerson) values ('哈哈',',1,2,8,',8,3,8,2);

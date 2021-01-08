@@ -1,0 +1,1 @@
+update SYS_CM_GLOBAL_TABLE set delFlag=1,mTime=getdate() where id=522;

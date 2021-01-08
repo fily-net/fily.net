@@ -1,0 +1,145 @@
+
+
+
+/* ==========================================================================
+   Example page boilerplate styles
+   ========================================================================== */
+
+
+
+
+
+
+/* Content */
+#content {
+    float:left;
+}
+#content a { color: #0088cc;border:1px solid #CAC0C0 }
+#content a:hover { color: #005580; }
+
+
+
+
+/* ==========================================================================
+   Page styles
+   ========================================================================== */
+
+/* universal sly */
+.slyWrap .controls { margin: 20px 0 ; }
+
+.controls { text-align: center; }
+
+.sly { overflow: hidden; }
+.sly > ul { list-style: none; margin: 0; padding: 0; }
+.sly > ul li { position: relative; margin: 0; padding: 0;  color: #fff; text-align: center; cursor: pointer; }
+.sly > ul li.active { background: #fff; color: #4DBCE9;
+
+}
+
+.pages { list-style: none; margin: 20px 20px; padding: 0; text-align: center; }
+.pages li { display: inline-block; width: 11px; height: 11px; margin: 0 2px; text-indent: -999px; background: #fff; border-radius: 10px; cursor: pointer;
+	overflow: hidden; border: 1px solid #aaa;
+}
+.pages li:hover { background: #eee; }
+.pages li.active { background: #999; border-color: #888; box-shadow: inset 0 0 0 2px #eee; }
+
+.scrollbar { background: #808080; border-radius: 4px; border: 2px solid #808080; border-top-color: #666; line-height: 0; }
+.scrollbar .handle { border-radius: 4px; background: #fff; cursor: pointer; line-height: 0;
+	-webkit-box-shadow: 0 1px 0 #555;
+	-moz-box-shadow: 0 1px 0 #555;
+	-o-box-shadow: 0 1px 0 #555;
+	box-shadow: 0 1px 0 #555;
+}
+
+/* Horizontal examples */
+#horizontal .slyWrap { margin: 3em 0; }
+
+#horizontal .scrollbar { margin: 1em 0; height: 5px; }
+#horizontal .scrollbar .handle { width: 100px; height: 100%; }
+
+#horizontal .example1 .sly { height: 170px; }
+#horizontal .example1 .sly ul { height: 100%; }
+#horizontal .example1 .sly ul li { float: left; width: 187px; height: 100%; margin: 0 1px 0 0; font-size: 50px; line-height: 170px; }
+
+#horizontal .example2 .sly { height: 200px; }
+#horizontal .example2 .sly ul { height: 100%; }
+#horizontal .example2 .sly ul li { float: left; width: 266px; height: 100%; margin: 0 1px 0 0; font-size: 50px; line-height: 200px; }
+
+#horizontal .example3 .sly { height: 200px; }
+#horizontal .example3 .sly ul { height: 100%; }
+#horizontal .example3 .sly ul li { float: left; width: 465px; height: 100%; margin: 0 10px 0 0; font-size: 50px; line-height: 200px; cursor: default; }
+#horizontal .example3 .sly ul li.active { background: #4DBCE9; color: #fff; -webkit-box-shadow: none; -moz-box-shadow: none; -o-box-shadow: none; box-shadow: none; }
+
+#horizontal .example4 .sly { height: 160px; }
+#horizontal .example4 .sly ul { height: 100%; }
+#horizontal .example4 .sly ul li { float: left; padding: 0 20px; width: 360px; height: 100%; font-size: 50px; opacity: 0.2; cursor: default;
+	overflow: hidden; background: none; box-shadow: none; font-size: 14px; text-align: justify; color: #444;
+	-webkit-transition: opacity 0.3s linear; -moz-transition: opacity 0.3s linear; -o-transition: opacity 0.3s linear; transition: opacity 0.3s linear;
+}
+#horizontal .example4 .sly ul li.active { opacity: 1; }
+
+/* Vertical examples */
+#vertical .slyWrap { margin: 1em 0; width:910px; float: left; }
+
+#vertical .scrollbar { width: 5px; }
+#vertical .scrollbar .handle { height: 100px; width: 100%; }
+
+#vertical .example1 { position: relative; }
+#vertical .example1 .sly { width: 880px; height: 400px; border: 1px solid #aaa; }
+#vertical .example1 .sly ul { width: 100%; height: 100%; overflow: hidden;text-align: center }
+#vertical .example1 .sly ul li { height: 261px;font-size: 40px;width:100%;float:left;display: block;}
+#vertical .example1 .sly ul li a{ height: 261px;font-size: 40px;width:220;float:left;display: block;}
+#vertical .example1 .scrollbar { position: absolute; top: 0; right: 10px; height: 400px; }
+
+#vertical .example2 { position: relative; }
+#vertical .example2 .sly { width:888px;height: 400px; border: 0px solid #aaa; background: #fff; }
+#vertical .example2 .sly > div {padding:0 }
+#vertical .example2 .scrollbar { position: absolute; top: 0; right: 10px; height: 400px; }
+
+/* Vertical example */
+#infinite .controlbar { margin: 2em 0 1.5em; }
+#infinite .frameWrap { position: relative; height: 500px; }
+#infinite .frame { height: 500px; margin-right: 20px; overflow: hidden; border: 1px solid #888; }
+#infinite .frame ul { width: 100%; margin: 0; padding: 0; list-style: none; }
+#infinite .frame ul li { margin: 0 0 5px 0; padding: 0; height: 200px; line-height: 200px; font-size: 30px; border-bottom: 1px solid #aaa;
+	background: #eee; color: #888; text-align: center;
+}
+
+#infinite .scrollbar { position: absolute; top: 0; right: 0; width: 5px; height: 498px; }
+#infinite .scrollbar .handle { height: 100px; width: 100%; }
+
+
+/* ==========================================================================
+   Non-semantic helper classes
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+
+/* Floats */
+.fleft { float: left; }
+.fright { float: right; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* PrettyPrint styles */
+.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}
+.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}
+.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}
+ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}

@@ -1,0 +1,4 @@
+[2015-07-29 00:06:01] update SYS_CM_USER set delFlag=1,mTime=getdate() where id in (4,5);
+[2015-07-29 00:21:35] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('登录.jpg','2015072912213510201','jpg','登录','docmg',512221,1,',1,2,8,',6,3,8,2);
+[2015-07-29 00:21:36] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('登录界面.jpg','2015072912213617280','jpg','登录界面','docmg',1022520,1,',1,2,8,',7,3,8,2);
+[2015-07-29 00:21:36] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('物资供应商详情.txt','2015072912213612760','txt','物资供应商详情','docmg',0,1,',1,2,8,',8,3,8,2);

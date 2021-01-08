@@ -1,0 +1,2 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" EnableViewState="false" Debug="True" validateRequest="false" CodeFile="office_reader.aspx.cs" Inherits="office_reader" %>
+<%@ outputcache Duration="5" VaryByParam="*" %>

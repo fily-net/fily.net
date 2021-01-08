@@ -1,0 +1,2 @@
+insert into SYS_CM_GLOBAL_BTNSET (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('148','工程状态信息',',1,148,',1,2,2);
+insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('登录.jpg','2015052111112917725','jpg','登录','test',512221,1,',1,4,',100,2,4,2);

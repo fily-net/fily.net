@@ -1,0 +1,5 @@
+update SYS_CM_USER set mPerson=5, mTime=getdate(),avatar='5.jpg' where id=5;
+update SYS_CM_USER set mPerson=5, mTime=getdate(),avatar='5.jpg' where id=5;
+update SYS_CM_USER set mPerson=5, mTime=getdate(),avatar='5.jpg' where id=5;
+update SYS_CM_USER set mPerson=13, mTime=getdate(),avatar='13.jpg' where id=13;
+update SYS_CM_USER set mPerson=20, mTime=getdate(),avatar='20.jpg' where id=20;

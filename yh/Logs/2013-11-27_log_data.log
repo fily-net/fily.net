@@ -1,0 +1,14 @@
+update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=18;
+update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=17;
+update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=16;
+update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=13;
+update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=10;
+insert into SYS_QT_PAPER_TOPIC (title,link,type,paperId,cPerson) values ('测试一','','1','8',2);
+insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,19,'1',2);
+insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,19,'2',2);
+insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,19,'3',2);
+insert into SYS_QT_PAPER_TOPIC (title,link,type,paperId,cPerson) values ('测试二','','2','8',2);
+insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,20,'1',2);
+insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,20,'2',2);
+insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,20,'3',2);
+insert into SYS_QT_PAPER_TOPIC (title,link,type,paperId,cPerson) values ('测试三','','3','8',2);

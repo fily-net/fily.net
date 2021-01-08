@@ -1,0 +1,200 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>综合信息系统</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="综合信息系统" />
+        <meta name="keywords" content="综合信息系统" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+        <link type="text/css" rel="Stylesheet" href="script/lib/codemirror.css" />
+        <style type="text/css">
+            html{background:url("images/login/beijing.jpg") no-repeat 50% 50%;_background:none;background-color:#24213C;height: 100%;margin: 0;padding: 0;border: 0;outline: 0;}
+            body {font: 13px/22px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 rgba(0,0,0,.3);}
+            .main 
+            {
+                width: 480px;height: 360px; position: absolute;top: 50%;left: 50%;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px; 
+                border-radius: 5px; margin: -180px 0 0 -240px; background-color:#DDDDDF;
+                box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+            }
+            .main>.logo{ text-align: center; margin-top:20px; }
+            .main>._body {float: right;width: 300px;height: 240px;overflow:hidden; margin: 0px 90px 50px 90px;}
+            .main>._body>.form {width: 650px;}
+            .main>._body>.form>FORM { width: 300px; float:left;}
+            .main>._body>.form>FORM>DIV{ margin-top:15px;}
+            .main>._body>.form>FORM .inp
+            {
+                display:block;
+		        width:280px;
+		        height:35px;
+		        *height:23px;
+		        padding:4px 7px;
+		        line-height:18px;
+		        margin: 5px 0px 10px 5px;
+		        font-size:12px;
+		        line-height:18px;
+		        background:#e8f4fc;
+		        color:#888;
+		        cursor:text;
+		        box-shadow:0 1px 0 rgba(255,255,255,.3),0 1px 3px rgba(0,0,0,.3) inset;
+		        background-clip:padding-box;
+		        -webkit-border-radius: 5px;
+                -moz-border-radius: 5px; 
+                border-radius: 5px; 
+                outline: none; 
+                text-shadow: 0px 1px 0px #fff; 
+                -webkit-transition: .3s ease-in-out; 
+                -moz-transition: .3s ease-in-out; 
+                -o-transition: .3s ease-in-out; 
+            }
+            .main>._body>.form>FORM .pwd{ ime-mode:disabled; background:url("images/league/loginpage.png") no-repeat; }
+            .main>._body>.form>FORM .user-mark { float:left; margin: 8px 3px; cursor: pointer;  width:16px; height:16px; }
+            .main>._body>.form>FORM .pwd-mark { float:left; margin: 8px 3px; cursor: pointer;  }
+            .main>._body>.form>FORM .checkbox-mark { float:left; margin: 5px 3px; cursor: pointer; width:17px; height:16px; margin:10px 5px; background:url("images/qietu.png") no-repeat -38px -2px;display: inline-block; }
+            .main>._body>.form>FORM .checked-mark { float:left; margin: 5px 3px; cursor: pointer; width:17px; height:16px; margin:10px 5px; background:url("images/qietu.png") no-repeat -1px -2px;display: inline-block; }
+            .main>._body>.form>FORM .txt
+            {   
+                font-family:"微软雅黑","宋体";
+		        display: inline-block; float:left; margin-left:4px;
+		        width:246px;
+		        padding:5px 3px;
+		        font-size:14px;
+		        background:#e8f4fc;
+		        border: 1px solid transparent;
+		        color:#333;
+	        }
+	        .main>._body>.form>FORM .txt:focus {border: 1px solid #fafafa;-webkit-box-shadow: 0px 0px 6px #007eff;-moz-box-shadow: 0px 0px 5px #007eff;box-shadow: 0px 0px 5px #007eff;}
+	        .main>._body>.form>FORM .btn
+	        {
+	            font-family:"微软雅黑","宋体";
+                display:inlink-block; font-size:22px;
+                margin-left:6px;
+                padding:8px 20px;
+                width:292px;
+                border:1px solid #0a7bbc;
+                border-radius:3px;
+                box-shadow:0 2px 0 #0e72a7;
+                color:#dfeff7;
+                text-shadow:0 1px 1px #0059a3;
+                cursor:pointer;
+                background-image: -moz-linear-gradient(top, #23a0e6, #2e8fcd); /* Firefox */
+                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #23a0e6), color-stop(1, #2e8fcd)); /* Saf4+, Chrome */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#23a0e6', endColorstr='#2e8fcd', GradientType='0'); /* IE*/
+                text-decoration:none;
+            }
+            .main>._body>.form>FORM .btn:hover{
+                background-image: -moz-linear-gradient(top, #46ace6, #369cda); /* Firefox */
+                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #46ace6), color-stop(1, #369cda)); /* Saf4+, Chrome */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#46ace6', endColorstr='#369cda', GradientType='0'); /* IE*/
+            }
+            .main>._body>.form>FORM .btn:active{background:#3394d0;box-shadow:inset 0 2px 2px #0e72a7}
+            .main>._body>.form>FORM>.loginTab{ margin-top:0px; height:30px;margin: 5px 0px 10px 5px; color:#A5A5A5; font-size:14px; }
+            .main>._body>.form>FORM>.loginTab>li{ float:left; text-indent:5px; line-height:30px; height:30px; width:100px; cursor:pointer; border-top: 2px solid transparent; }
+            .main>._body>.form>FORM>.loginTab>li.curr{ border-top: 2px solid #0E72A7; color:#0E72A7; background-color: transparent; }
+            .main>._body>.form>FORM>.loginTab>li:hover{ color:#2C91D1; }
+            .main>._foot { width:100%; margin-top: -85px; overflow:hidden; height:230px; text-align:center; background:url("images/league/logoboard.png") repeat-x;}
+            .main>._foot IMG{ margin:75px 0px; }
+            .info {position: absolute; float:left;}
+            .icon-glyph-user { background: url("images/qietu.png") -2px -180px; display:inline-block; width:12px; height:12px;}
+            .icon-glyph-pwd  { background: url("images/qietu.png") -20px -179px; display:inline-block; width:14px; height:18px;}
+        </style>
+    </head>
+    <body>
+        <div class="main" id="main">
+            <div class="logo"><img src="images/login/wenzi2.png" /></div>
+            <div class="_body">
+                <div class="form" id="forms">
+                    <form class="login" onsubmit="return false;" >
+                        <ul class="loginTab"><li class="curr" idx="tab-name">用户名</li><li idx="tab-ic">IC卡</li></ul>
+                        <div style="margin-top:0px;" id="tab-name" >
+                            <div class="inp"><span class="user-mark icon-glyph-user"></span><input id="fc0" class="txt" type="text" name="uid" reg="\S{1,}" tabindex="1" placeholder="用 户 名" error="用户名不能为空" /></div>
+                            <div class="inp"><span class="pwd-mark icon-glyph-pwd"></span><input class="txt pwd" type="password" name="pwd" reg="\S{3,}" tabindex="2" placeholder="密 码" error="密码必须四位以上" /></div>
+                        </div>
+                        <div style="margin-top:0px;" class="dn" id="tab-ic" >
+                            <div class="inp"><span class="user-mark icon-glyph-user"></span><input id="fc00" class="txt" type="password" name="icCard" reg="\S{1,}" tabindex="1" placeholder="I C 卡" error="IC卡不能为空" /></div>
+                        </div>
+                        <div ><input class="btn" type="button" tabindex="3" value="登 陆" /></div>
+                        <div style="height:32px; line-height:35px; color:#A8A8A8; margin-top:6px; "><a class="checkbox-mark" id="remember-password" part="checkbox"></a><span>记住密码</span><a style="display: inline-block; float:right;cursor:pointer;" idx="1">忘记密码 ></a></div>
+                    </form>
+                    <form class="forgetPWD" onsubmit="return false;" >
+                        <div class="inp" style="margin-top:35px;"><span class="user-mark icon-glyph-user"></span><input class="txt" id="fc1" type="text" name="email" reg="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+" error="邮件格式不对(如：snyh@water-sh.com)" tabindex="6" placeholder="邮 件" /></div>
+                        <div ><input class="btn" type="button" tabindex="3" value="发送验证邮件" /></div>
+                        <div style="height:32px; line-height:35px; color:#A8A8A8;"><a style="display: inline-block; float:right; cursor: pointer;" idx="0">< 返回登录</a></div>
+                    </form>
+                </div>
+            </div>
+            <div style="text-align:center; margin-bottom:0px;color:red;">Test Login Account: admin/admin</div>
+        </div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/miui.js" type="text/javascript"></script>
+    <script src="script/meeko_ext.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            if ($.ck.get('ifSave') && $.ck.get('SESSIONID')) { window.location.href = 'main.html'; }
+            var currLoginTab = $('tab-name');
+            $('fc0').focus();
+            $DB.evt('click', function (e) {
+                var e = $.e.fix(e), _e = e.t, _idx = +_e.attr('idx');
+                if (_e.className == 'btn') { submit(_e); return; }
+                if (_e.attr('part') == 'checkbox') { if (_e.className == 'checked-mark') { _e.dc('checked-mark').ac('checkbox-mark'); } else { _e.ac('checked-mark').dc('checkbox-mark'); } }
+                if (_e.tagName == 'A' && !isNaN(_idx)) { $('forms').ease(['margin-left'], [-(_idx * 300)], 300, 'easeOutQuart', { e: function () { console.log($('fc' + _idx)); $('fc' + _idx).focus(); } }); }
+                if (_e.tagName == 'LI' && _e.className != 'curr') {
+                    if (_e.ns()) { _e.ns().dc('curr'); } else { _e.ps().dc('curr'); };
+                    _e.ac('curr'); currLoginTab.ac('dn'); currLoginTab = $(_e.attr('idx')); currLoginTab.dc('dn'); currLoginTab.chr(0).chr(1).focus();
+                }
+                VTips.hide();
+            }).evt('keyup', function (e) { var e = $.e.fix(e), _e = e.t; if (e.code == 13) { submit(_e); } });
+            function submit(_e) {
+                var _inputs = findForm(_e), _vals = '', _action = _inputs.className.trim(), _vObj = {}, _fInput;
+                for (var i = 0, _len = _inputs.length; i < _len; i++) {
+                    var _input = $(_inputs[i]), _reg = _input.attr('reg'), _pos = _input.pos(), _val = _input.value;
+                    if (!_reg || !_pos.x) { continue; }
+                    if (!(new RegExp(_reg)).test(_val) || _val == _input.attr('default')) {
+                        _input.focus();
+                        VTips.setSkin('error').setText(_input.attr('error') || '非法输入!').setTarget(_input, 'left');
+                        $('main').ac('pulse'); setTimeout(function () { $('main').dc('pulse'); }, 100);
+                        return false;
+                    }
+                    _vals += '&' + _input.attr('name') + '=' + _val;
+                    _vObj[_input.attr('name')] = _val;
+                    if (!_fInput && _input.type == 'password') { _fInput = _input; }
+                }
+                VTips.hide(); showMask(true);
+                $.Util.ajax({
+                    url: 'meeko.aspx',
+                    ifCheckCookie: false,
+                    args: 'm=SYS_CM_USERS&action=' + _action + _vals,
+                    onSuccess: function (d) {
+                        showMask(false);
+                        if (_action == 'forgetPWD') {
+                            _inputs.h('<div><img src="images/icon/40_40/success_iconx.png" /><div>发送邮件成功(<font color="red">如果十分钟之后还未收到邮件，可能系统被当成垃圾邮件了哦</font>)</div></div>');
+                        } else {
+                            if ($.ck.get('SESSIONID')) { $.ck.remove('SESSIONID'); }
+                            $.ck.set('SESSIONID', d.get(0).trim());
+                            if ($('remember-password').cn().trim() == 'checked-mark') { $.ck.set('ifSave', "1"); }
+                            window.location.href = 'main.html';
+                        }
+                    },
+                    onError: function (d) {
+                        showMask(false);
+                        MTips.show(d.data || '账号信息错误', 'error'); _fInput.focus();
+                        for (var i = 0, _len = _inputs.length - 1; i < _len; i++) { if (_inputs[i].type == 'password') { _inputs[i].value = ''; } }
+                    }
+                });
+            }
+            function findForm(_e) { if (_e.tagName == 'FORM') { return _e; } else { return findForm(_e.pn()); } }
+            function showMask(ifShow) {
+                if (ifShow) {
+                    _mask = new $.UI.Mask({ p: $DB, alpha: 12 });
+                } else {
+                    if (_mask) { _mask.remove(); _mask = null; }
+                }
+            }
+        });
+    </script>
+</html>

@@ -1,0 +1,18 @@
+[2013-12-03 10:24:03] update SYS_CM_GLOBAL_TABLE set mPerson=2, mTime=getdate(),nodeName='【＜]font style="color:【≮]9D3700;"【＞]进行中【＜]/font【＞]',ifRights='0',icon='',attrObj='{}' where id=587;
+[2013-12-03 10:25:38] update SYS_CM_GLOBAL_TABLE set mPerson=2, mTime=getdate(),nodeName='【＜]font style="color:【≮]008BF4;"【＞]新建【＜]/font【＞]',ifRights='0',icon='',attrObj='{}' where id=586;
+[2013-12-03 10:26:40] update SYS_CM_GLOBAL_TABLE set mPerson=2, mTime=getdate(),nodeName='【＜]font style="color:【≮]DF2227;"【＞]已关闭【＜]/font【＞]',ifRights='0',icon='',attrObj='{}' where id=589;
+[2013-12-03 11:35:53] insert into SYS_CM_GLOBAL_BTNSET (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('133','Bug记录操作菜单',',1,2,133,',2,3,2);
+[2013-12-03 11:35:53] update SYS_CM_GLOBAL_BTNSET set mPerson=2, mTime=getdate(),sons=sons+1 where id=133;
+[2013-12-03 11:36:31] insert into SYS_CM_GLOBAL_BTNSET (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('137','新增历史记录',',1,2,133,137,',1,4,2);
+[2013-12-03 11:36:31] update SYS_CM_GLOBAL_BTNSET set mPerson=2, mTime=getdate(),sons=sons+1 where id=137;
+[2013-12-03 11:36:44] update SYS_CM_GLOBAL_BTNSET set mPerson=2, mTime=getdate(),nodeName='新增历史记录',ifRights='0',icon='icon-glyph-plus-sign',ext='' where id=138;
+[2013-12-03 14:44:42] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('120.jpg','2013120302444214932','jpg','120','test',5851,1,',1,4,',78,2,4,2);
+[2013-12-03 14:44:42] update SYS_CM_FILES set mPerson=2, mTime=getdate(),sons=sons+1 where id=4;
+[2013-12-03 14:44:45] insert into SYS_BUGS_HISTORY (note,link,bugId,cPerson) values ('fasdf',',149,','1',2);
+[2013-12-03 15:30:50] insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('2000.jpg','2013120303305010101','jpg','2000','test',73364,1,',1,4,',79,2,4,1);
+[2013-12-03 15:30:50] update SYS_CM_FILES set mPerson=1, mTime=getdate(),sons=sons+1 where id=4;
+[2013-12-03 15:30:53] insert into SYS_BUGS_HISTORY (note,link,bugId,cPerson) values ('fasdfasdfasd',',150,','1',1);
+[2013-12-03 16:05:48] insert into SYS_BUGS_HISTORY (note,link,bugId,cPerson) values ('测试代码','','1',2);
+[2013-12-03 16:07:20] insert into SYS_BUGS_HISTORY (note,link,bugId,cPerson) values ('谁说的呀','','1',2);
+[2013-12-03 16:25:44] insert into SYS_BUGS_HISTORY (note,link,bugId,cPerson) values ('测试哈','','1',2);
+[2013-12-03 16:52:06] update SYS_CM_GLOBAL_BTNSET set mPerson=2, mTime=getdate(),nodeName='新增记录',ifRights='0',icon='icon-glyph-plus-sign',ext='' where id=138;

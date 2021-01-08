@@ -1,0 +1,134 @@
+﻿html{
+    background:url("../images/login/bg/2.jpg") no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0;padding: 0;border: 0;outline: 0;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+body {font: 13px/22px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 rgba(0,0,0,.1);}
+.main 
+{
+    width: 480px;height: 360px; position: absolute;top: 50%;left: 50%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    margin: -180px 0 0 -240px; 
+    background:#fff;
+    /*background: url(../images/bg-white-lock.png) repeat;*/
+    box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+}
+.main>.logo{ text-align: center; margin-top:20px; }
+.main > .logo > .title {
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    width: 300px;
+    border-bottom: 1px solid #EBEBEB;
+    color: #1AC4E5;
+    font-size: x-large;
+}
+.main>._body {float: right;width: 300px;height: 240px;overflow:hidden; margin: 0px 90px 50px 90px;}
+.main>._body>.form {width: 650px;}
+.main>._body>.form>FORM { width: 300px; float:left;}
+.main>._body>.form>FORM>DIV{ margin-top:15px;}
+.main>._body>.form>FORM .inp
+{
+    display:block;
+	height:35px;
+	*height:23px;
+	margin: 15px 0px;
+	font-size:12px;
+	line-height:18px;
+    
+	/*background:#e8f4fc;*/
+	color:#888;
+	cursor:text;
+    /*box-shadow:0 1px 0 rgba(255,255,255,.3),0 1px 3px rgba(0,0,0,.3) inset;*/
+	background-clip:padding-box;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    outline: none; 
+    text-shadow: 0px 1px 0px #fff; 
+    -webkit-transition: .3s ease-in-out; 
+    -moz-transition: .3s ease-in-out; 
+    -o-transition: .3s ease-in-out; 
+}
+ .main > ._body > .form > FORM .inp.focus {
+    color:#1AC4E5;
+}
+.main>._body>.form>FORM .pwd{ ime-mode:disabled; }
+.main>._body>.form>FORM .icon { 
+    float: left;
+    margin: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    width: 16px;
+    text-align:center;
+    color:#DFDFDF;
+}
+.main>._body>.form>FORM .checkbox-mark { float:left; margin: 5px 3px; cursor: pointer; width:17px; height:16px; margin:10px 5px 10px 0px; background:url("../images/qietu.png") no-repeat -38px -2px;display: inline-block; }
+.main>._body>.form>FORM .checked-mark { float:left; margin: 5px 3px; cursor: pointer; width:17px; height:16px; margin:10px 5px 10px 0px; background:url("../images/qietu.png") no-repeat -1px -2px;display: inline-block; }
+.main > ._body > .form > FORM .forget-pwd {
+    display: inline-block; float:right;cursor:pointer;
+}
+.main > ._body > .form > FORM A:hover {
+    color:#23a0e6;
+}
+.main>._body>.form>FORM .txt
+{   
+    float:left;
+    font-family:"微软雅黑","宋体";
+	display: inline-block; 
+	padding: 8px 0px 8px 3px;
+    padding-left: 33px !important;
+    margin-left: -32px;
+	font-size:14px;
+	border: 1px solid #DFDFDF;
+	color:#333;
+    width: 265px;
+}
+.main>._body>.form>FORM .txt:focus {border: 1px solid #1AC4E5;}
+   
+.main>._body>.form>FORM .btn
+{
+	font-family:"微软雅黑","宋体";
+    display: inline-block; 
+    font-size:22px;
+    padding:8px 20px;
+    width:300px;
+    border:1px solid #0a7bbc;
+    border-radius:3px;
+    color:#dfeff7;
+    text-shadow:0 1px 1px #0059a3;
+    cursor:pointer;
+    background:#23a0e6;
+    text-decoration:none;
+}
+
+.main>._body>.form>FORM .btn.warn
+{
+    border: 1px solid #B24F02;
+    background: #E46401;
+}
+.main>._body>.form>FORM .btn:hover{
+    opacity: 0.8;
+}
+.main>._body>.form>FORM .btn:active{ opacity: 0.9; }
+.main>._body>.form>FORM>.loginTab{ margin-top:0px; height:30px; margin: 15px 0px; color:#A5A5A5; font-size:14px; }
+.main>._body>.form>FORM>.loginTab>li{ float:left; text-indent:5px; line-height:30px; height:30px; width:50%; cursor:pointer; border-top: 2px solid transparent; }
+.main>._body>.form>FORM>.loginTab>li.curr{ 
+    border-top: 2px solid #06B7DA;
+    color: #1AC4E5;
+    background-color: transparent;
+}
+.main>._body>.form>FORM>.loginTab>li:hover{ color:#2C91D1; }
+.main>._foot { width:100%; margin-top: -85px; overflow:hidden; height:230px; text-align:center; background:url("../images/league/logoboard.png") repeat-x;}
+.main>._foot IMG{ margin:75px 0px; }
+.info {position: absolute; float:left;}
+.icon-glyph-user { background: url("../images/qietu.png") -2px -180px; display:inline-block; width:12px; height:12px;}
+.icon-glyph-pwd  { background: url("../images/qietu.png") -20px -179px; display:inline-block; width:14px; height:18px;}

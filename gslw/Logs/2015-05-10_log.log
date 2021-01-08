@@ -1,0 +1,7 @@
+[2015-05-10 10:50:24] insert into SYS_CM_FN_TREE (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('15','组织机构管理',',1,2,6,15,',3,4,2);
+[2015-05-10 13:58:44] insert into SYS_PM_PROJECT (nodeName,level,proType,preSTime,preETime,note,parentPath,treeOrder,depth,pid,cPerson) values ('员工花名册','723','718','','','所有员工可以通过这个查询公司所有人信息',',1,2,',1,2,2,2);
+[2015-05-10 14:03:19] insert into SYS_PM_PROJECT (nodeName,level,proType,preSTime,preETime,note,parentPath,treeOrder,depth,pid,cPerson) values ('物资结构','723','718','','','可管理整个物资数据结构',',4,',1,1,4,2);
+[2015-05-10 14:05:25] insert into SYS_PM_PROJECT (nodeName,level,proType,preSTime,preETime,note,cPerson) values ('工程管理','723','718','','','工程/分包商/费用结算',2);
+[2015-05-10 14:05:47] insert into SYS_PM_PROJECT (nodeName,level,proType,preSTime,preETime,note,parentPath,treeOrder,depth,pid,cPerson) values ('工程管理','723','718','','','',',7,',1,1,7,2);
+[2015-05-10 14:06:13] insert into SYS_PM_PROJECT (nodeName,level,proType,preSTime,preETime,note,parentPath,treeOrder,depth,pid,cPerson) values ('分包商','723','718','','','',',7,',2,1,7,2);
+[2015-05-10 14:06:25] insert into SYS_PM_PROJECT (nodeName,level,proType,preSTime,preETime,note,parentPath,treeOrder,depth,pid,cPerson) values ('费用结算','723','718','','','',',7,',3,1,7,2);

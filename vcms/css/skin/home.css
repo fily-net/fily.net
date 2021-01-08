@@ -1,0 +1,214 @@
+﻿.home {
+    margin: 0px 8px;
+}
+.home>li {
+    list-style:none;
+    padding:8px;
+}
+.info-panel {
+    border:1px solid #27A9E3;
+}
+.info-panel>.panel-head {
+    height:35px;
+    background:#27A9E3;
+    color:#FFF;
+    text-indent:8px;
+}
+
+.info-panel > .panel-head > .info-tag {
+    background: #DA542E;
+    float: right;
+    min-width: 20px;
+    margin:5px;
+    padding: 4px 9px;
+    text-align: center;
+    cursor:pointer;
+    border-radius:50px;
+}
+
+.info-panel > .panel-head > .info-title {
+    height:100%;
+    line-height:35px;
+    float:left;
+}
+
+.info-panel > .panel-head > span.info-tag {
+    background: #DA542E;
+    float: right;
+    padding: 6px;
+    margin:5px;
+    text-align: center;
+    border-radius:3px;
+    cursor:pointer;
+}
+
+.info-panel>.panel-body {
+    height:auto;
+    padding:8px;
+}
+
+.info-panel>.panel-body>ul {
+    list-style:none;
+}
+
+.info-panel>.panel-body>ul>li {
+    list-style:none;
+    padding:0px 0px;
+    margin: 8px;
+    border-radius:2px;
+    border: 1px solid #27A9E3;
+}
+
+.item-detail {
+
+}
+.item-detail .i-head {
+    height:auto;
+    border-bottom:1px solid #DDDDDD;
+    padding-left:8px;
+}
+.item-detail .i-head>.item {
+    height:25px;
+    line-height:25px;
+}
+.item-detail .i-head>.avatar {
+      float: right;
+      margin: 6px;
+      width: 32px;
+}
+.item-detail .i-head > .avatar-text {
+        float: right;
+      border: 2px dotted #21b384;
+      padding: 8px;
+      border-radius: 5px;
+      color: #21b384;
+      margin-top: 6px;
+}
+.item-detail .i-body {
+    height:auto;
+
+}
+
+
+.info-panel>.panel-body>ul>li>.title{ background-color:#F5F5F5; overflow: hidden;  padding:2px; }
+.info-panel>.panel-body>ul>li>.title>._title{ 
+    font-weight: bold;
+    color: #3C3C3C;
+    line-height: 30px;
+    font-size: 20px;
+    text-indent: 5px;
+}
+.info-panel>.panel-body>ul>li>.title>._info{ width:100%; height:20px; line-height:20px;color: #7B7B7B; font-size:12px; }
+.info-panel>.panel-body>ul>li>.title>._info>SPAN{ display:inline-block; float: left; padding: 0px 5px;}
+.info-panel>.panel-body>ul>li>.title .fa {
+  float: right;
+  border: 1px solid transparent;
+  font-size: 50px;
+  cursor: pointer;
+}
+.info-panel>.panel-body>ul>li> .title .attr {
+    padding:1px 5px;
+    padding-right:0px;
+    background:#e05d23;
+    color:#FFF;
+    line-height:25px;
+}
+.info-panel>.panel-body>ul>li> .title .attr.time {
+    background:#E81912;
+}
+.info-panel>.panel-body>ul>li> .title .attr .attr-value {
+    padding:5px;
+    background:#FFF;
+    color:#e05d23;
+}
+.info-panel>.panel-body>ul>li>.content{ line-height:1.8; padding:6px 8px; }
+.info-panel>.panel-body>ul>li>.attach{ background-color:#F5F5F5; overflow: hidden; padding:6px 8px;  }
+.info-panel>.panel-body>ul>li>.attach>span{ font-weight:bold; }
+.info-panel>.panel-body>ul>li>.attach>.files{ margin-left:50px; margin-top:-16px;  }
+.info-panel>.panel-body>ul>li>.attach>.files>A{ display:block; margin:1px; padding:1px;font-size:14px; }
+
+
+.msg-list {
+    list-style:none;
+    border:1px solid #27A9E3;
+    overflow:hidden;
+    padding:10px;
+}
+
+.msg-list li {
+    list-style:none;
+    float:left;
+    height:64px;
+    background:#0094ff;
+    color:#FFF;
+    padding:0px 15px;
+    margin: 0px 15px;
+    opacity:0.8;
+    cursor:pointer;
+}
+
+.msg-list li:hover {
+    opacity:1;
+}
+
+.msg-list li.idx0 {
+    background:#27A9E3;
+}
+
+.msg-list li.idx1 {
+    background:#28B779;
+}
+
+.msg-list li.idx2 {
+    background:#F29300;
+}
+
+.msg-list li.idx3 {
+    background:#DA542E;
+}
+
+
+.msg-list li.idx4 {
+    background:#0a4287;
+}
+
+.msg-list li.idx5 {
+    background:#D47301;
+}
+
+.msg-list li.idx6 {
+    background:#01d496;
+}
+
+.msg-list li.idx7 {
+    background:#87d401;
+}
+
+.msg-list li.idx8 {
+    background:#d4cd01;
+}
+
+.msg-list li.idx9 {
+    background:#d47301;
+}
+
+.msg-list li .icon, .msg-list li .text {
+    float:left; 
+    height:100%;
+    line-height:64px;
+}
+
+.msg-list li .icon a {
+    font-size: 48px;
+    margin: 8px;
+}
+
+.msg-list li .count {
+    position:relative;
+    top:-22px;
+    right:-22px;
+    padding:5px 10px;
+    font-size:22px;
+    font-weight:bolder;
+    background:#DA542E;
+}

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Timer组件测试</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="Timer组件测试" />
+        <meta name="keywords" content="Timer组件测试" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+    </head>
+    <body>
+        <div id="test" style="width:500px; height:500px; left:100px;top:100px;border:1px solid red;position:absolute;"></div>
+        <div id="test1" style="width:500px; height:500px; left:700px;top:100px;border:1px solid red;position:absolute;"></div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/miui.js" type="text/javascript"></script>
+    <script src="script/meeko_ext.js" type="text/javascript"></script>
+    <script src="script/meeko_event_handler.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            
+            new $.UI.Button({
+                p: $DB, text: '测试', value: 'xx', skin: 'Button-blue', ifClose: false, css: 'margin-top:100px;',
+                onClick: function (obj) {
+                    $.Dialog.get({ ePop: obj.Owner, css: 'width:215px;height:220px;padding:5px 10px 5px 10px;', ifMask: true }).html('测试').show();
+                }
+            });
+
+            new $.UI.Form({
+                p: 'test', head_h: 30, foot_h: 30,
+                items: [
+                    { name: 'text', title: 'text', comType: 'Date', req: true },
+                    { name: 'xxtext', title: 'xxx', comType: 'Select', gtID: 15 }
+                ]
+            });
+            new $.UI.FormItem({ name: 'xxtext', title: 'xxx', comType: 'Select', gtID: 15 });
+
+            new $.UI.Tab({
+                p: 'test1',
+                items: [
+                    { name: 'all', text: '所有项目', comType: 'Date', req: true },
+                    { name: 'text', text: '电视电影', comType: 'Date', req: true },
+                    { name: 'text', text: '电视动画片', comType: 'Date', req: true },
+                    { name: 'text', text: '电影', comType: 'Date', req: true },
+                    { name: 'xxtext', text: '非动画电视', comType: 'Select', gtID: 15 }
+                ]
+            });
+
+
+
+            new $.UI.ButtonSet({ items: [{ text: 'add', name: 'add' }, { text: 'del', name: 'del' }], gtID: 1, gbsID: 1 });
+            //new $.UI.Tab({ items: [{ text: 'add', name: 'add' }, { text: 'del', name: 'del' }],ifFixedHeight: false });
+            //new $.UI.Menu({ items: [{ text: 'add', name: 'add' }, { text: 'del', name: 'del' }], gtID: 1 });
+            new $.UI.Paging({pageIndex:1, pageSize:10});
+           // new $.UI.RoleSelector({ p: $DB });
+           // new $.UI.SingleUserSelector({ p: $DB });
+
+            //new $.UI.UserSelector({ p: $DB });
+
+            //(new $.UI.ProgressBar({ p: $DB })).setValue(100);
+
+            //new $.UI.Accordion({ p: $DB, items: [{ name: 'xx', title: 'xx' }, { name: 'bb', title: 'bb' }, { name: 'cc', title: 'cc' }] })
+
+            //new $.UI.BarCode({ p: $DB, value: '1100100100101100' })
+            /*
+            $.ajax({
+                url: '../View/bug/BugList.js',
+                data: 'ss',
+                dataType: 'html',
+                method: 'POST',
+                onSuccess: function (data) {
+                    console.log(eval(data))
+                }
+            });*/
+            //$DB.load('../View/bug/BugList.js');
+            /*
+            new $.UI.Tips({ title: 't0', ifMask: true, width: 200, height: 200, head_h: 30, x: 100, y: 100, ifClose: true });
+            new $.UI.Tips({ title: 't1', ifMask: true, width: 200, height: 200, head_h: 30, x: 200, y: 200, ifClose: true });
+            new $.UI.Tips({ title: 't2', ifMask: true, width: 200, height: 200, head_h: 30, x: 300, y: 300, ifClose: true });
+            new $.UI.Tips({ title: 't3', ifMask: true, width: 200, height: 200, head_h: 30, x: 400, y: 400, ifClose: true });
+            new $.UI.Tips({ title: 't4', ifMask: true, width: 200, height: 200, head_h: 30, x: 500, y: 500, ifClose: true });
+            new $.UI.Tips({ title: 't5', ifMask: true, width: 200, height: 200, head_h: 30, x: 600, y: 600, ifClose: true });*/
+            //$.Dialog.get({ Owner: $DB, css: 'width:915px;height:520px;padding:5px 10px 5px 10px;', ifMask: true });
+            //$.Layer.remove();
+
+            //new $.UI.View({ p: $DB, url: '../View/bug/BugList.js' })
+           
+           // (new $.UI.ScrollBar({ p: $('test'), ifFixedHeight: true })).scrollTopTo(500);
+        });
+    </script>
+</html>

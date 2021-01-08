@@ -1,0 +1,1 @@
+update SYS_CM_FN_TREE set mPerson=2, mTime=getdate(),users=',,',roles=',,' where id=16;

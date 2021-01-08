@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>调查问卷-问卷列表</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/base.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <style type="text/css">
+            html{height: 100%;}
+            html, body, ul, li{margin: 0;padding: 0;border: 0;outline: 0;}
+            ul, li {list-style:none;}
+            .main {position: absolute; width:100%; height:100%; overflow: hidden; top:0px;left:0px;font-size: 14px;color: #555;}
+            .header 
+            {
+                position:absolute; font-size:12px; width:100%; top:0px;left:0px; overflow:hidden; -webkit-user-select:none; -khtml-user-select:none; -moz-user-focus:ignore; -moz-user-select:none; -moz-user-input:disabled;
+                height: 43px;
+                border-top: 1px solid #f6986f;
+                background: #e05d23;
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f57741),color-stop(100%,#e05d23));
+                background: -webkit-linear-gradient(top,#f57741 0,#e05d23 100%);
+                background: linear-gradient(to bottom,#f57741 0,#e05d23 100%);
+            }
+            .header>.header-arrow{position: absolute;left: 0;top: -1px;z-index: -1;display: inline-block;width: 4px;height: 4px;background: #000;}
+            .header>.header-list{z-index: 10;height: 43px;line-height: 43px; padding: 0 10px;color: #fff;}
+            .header>.header-list li:first-child {position: absolute;top: 0;left: 10px;width: 31px;z-index: 3; }
+            .header>.header-list li:nth-child(2) {width: 100%;font-size: 18px;text-align:center;font-weight: 600;}
+            .header>.header-list li:last-child {position: absolute;top: 0;right: 10px;width: 95px;text-align: right;}
+            .header>.header-arrow-right{left: auto;right: 0;}
+            .header>.header-mask{position: absolute;left: 0;top: 0;width: 100%;height: 43px;background-size: 2px 2px;opacity: .3;}
+            .nav-tab {
+                opacity: .9;
+                height: 38px;
+                line-height: 38px;
+                border-top: 1px solid #494949;
+                border-buttom: 1px solid #000;
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#3e3e3e),color-stop(100%,#1f1f1e));
+                background: -webkit-linear-gradient(top,#3e3e3e 0,#1f1f1e 100%);
+                background: linear-gradient(to bottom,#3e3e3e 0,#1f1f1e 100%);
+            }
+            .nav-tab>ul>li { display: inline-block;width: 23.5%;cursor:pointer;text-align: center;color: #f6f1e9;font-weight: 600;font-size: 16px; }
+            .nav-tab>ul>li>span { position: relative;overflow: hidden;min-width:68px;display: inline-block;-webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-user-select: none; }
+            .nav-tab .nav-tab-arrow { display:none;position: absolute;bottom: -4px;left: 30%;width: 10px;height: 10px;-webkit-transform: rotate(45deg);transform: rotate(45deg);margin: 10px 0 0 10px;background: #fdfcf6; }
+            .nav-tab>ul>li.sel{ color:#e05d23;}
+            .nav-tab>ul>li.sel .nav-tab-arrow{ display:block;}
+            .body { position:absolute; width:100%;display:table-row;left:0px; right:0px; overflow:auto;top:43px;bottom:0px;}
+            .body>UL{ font-size:13px; overflow: auto; border-radius: 5px; -webkit-border-radius: 5px;margin:12px; border:1px solid #E2E2E2;}
+            .body>UL>LI { background-color:White; border-bottom:1px solid #E2E2E2; overflow: hidden; text-align: center; font-weight:bold; padding:6px 8px; line-height:30px;}
+            .body>UL>LI:hover { background-color:#FCF0C0; cursor: pointer; }
+            .body>UL>LI:last-child{border:none;}
+            .body>UL>LI>.title{overflow: hidden;  padding:6px 8px; }
+            .body>UL>LI>.title>._title{ font-weight: bold; color:#3879D9; line-height:20px; font-size:13px;}
+            .body>UL>LI>.title>._info{ width:100%; height:20px; line-height:20px;color: #7B7B7B; font-size:12px; }
+            .body>UL>LI>.title>._info>SPAN{ display:inline-block; float: left;}
+            .body>UL>LI>.content { background-color:#FFFFFE;}
+            .body>UL>LI>.content>div { font-size:12px; line-height:30px; margin-left:10px; border-bottom:1px solid #D2E2D6; }
+            .body>UL>LI>.content>div>strong{color: #004565; padding:3px;}
+            .body>UL>LI>.content>div>span{display: inline-block;}
+            .body>UL>LI .over { color:#4DB849; }
+            .body>UL>LI .doing { color:#FCD209; }
+            .body>UL>LI .disabled { color:#BDBDBD; }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="header-list">
+                    <ul>
+                        <li></li>
+                        <li id="title">问卷调查</li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="body">
+                <ul id="info-list"></ul>
+            </div>
+        </div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            function init() {
+                var _eInfoList = $('info-list');
+                $.Util.ajax({
+                    args: 'm=SYS_CM_OA&action=loadPapers&dataType=json',
+                    ifCheckCookie: false,
+                    onSuccess: function (d) {
+                        var _dAry = eval(d.get(0) || '[]'), _dLen = _dAry.length;
+                        for (var i = 0; i < _dLen; i++) {
+                            _eInfoList.adElm('', 'li').h(_dAry[i].nodeName).attr('val', _dAry[i].id).evt('mousedown', function (e) { var e = $.e.fix(e), _e = e.t; $.setCookie('PAPERID', _e.attr('val')); window.location.href = 'paper-all-list-detail.html'; })
+                        }
+                    },
+                    onError: function (d) { MTips.show(d.data || '加载失败', 'error'); }
+                });
+            }
+            init();
+        });
+    </script>
+</html>

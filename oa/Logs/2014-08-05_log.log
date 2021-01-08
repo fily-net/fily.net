@@ -1,0 +1,4 @@
+[2014-08-05 13:41:37] insert into SYS_CM_USER (uid,icCard,sex,birthday,department,post,titles,fixedPhoneNum,mobilePhoneNum,agents,address,email,ifEnableEmail,note,cName,pinYin,cPerson) values ('bobo','','132','','','','','','',',','','','11','','bobo',dbo.SYS_GET_PINYIN('bobo'),1);
+[2014-08-05 14:02:55] insert into SYS_CM_GLOBAL_TABLE (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('145','test',',1,4,145,',3,3,71);
+[2014-08-05 15:45:19] insert into SYS_WH_MS (scanCode,code,nodeName,danwei,planPrice,highPrice,guige,note,parentPath,treeOrder,depth,pid,cPerson) values ('20140805154521','','','只',0,0,'','',',1,4,14,',6,3,14,71);
+[2014-08-05 15:45:25] insert into SYS_WH_MS (scanCode,code,nodeName,danwei,planPrice,highPrice,guige,note,parentPath,treeOrder,depth,pid,cPerson) values ('20140805154521','','','只',0,0,'','',',1,4,14,',6,3,14,71);

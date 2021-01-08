@@ -1,0 +1,200 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>企业ERP系统</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="企业ERP系统" />
+        <meta name="keywords" content="企业ERP系统" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+        <link type="text/css" rel="Stylesheet" href="script/lib/codemirror.css" />
+        <style type="text/css">
+            html{background:url("images/login/glow.png") no-repeat 50% 50%;_background:none;background-color:#0D7BD5;height: 100%;margin: 0;padding: 0;border: 0;outline: 0;}
+            body {color: rgba(255,255,255,.7);font: 13px/22px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 rgba(0,0,0,.3);}
+            .main {width: 580px;height: 300px; position: absolute;top: 50%;left: 50%;margin: -150px 0 0 -340px;}
+            .main>.logo{ float: left;width: 245px;height: 99px;color: rgba(255,255,255,.8); }
+            .main>.logo>.logo-img{ width: 245px;height: 89px; }
+            .main>.logo>.logo-info{ width: 245px;height: 50px; }
+            .main>.form{ float: right;width: 262px;height: 144px;overflow:hidden; padding: 10px 0px;}
+            .main>.form>.form-list{ width:790px; }
+            .main>.form>.form-list>FORM { float:left;width: 262px;}
+            .main>.form .pwd{ ime-mode:disabled; }
+            .main>.form .pwd-mark { float:right; display: inline-block; width:16px; height:16px; margin-top:-36px; margin-left:-30px;}
+            .main>.form .txt
+            {
+		        display:block;
+		        width:250px;
+		        padding:10px 5px;
+		        margin:0 0 10px;
+		        font-size:14px;
+		        line-height:18px;
+		        background:#e8f4fc;
+		        border:1px solid #0d7bd5;
+		        color:#888;
+		        cursor:text;
+		        box-shadow:0 1px 0 rgba(255,255,255,.3),0 1px 3px rgba(0,0,0,.3) inset;
+		        background-clip:padding-box;
+		        -webkit-border-radius: 5px;
+                -moz-border-radius: 5px; 
+                border-radius: 5px; 
+                outline: none; 
+                text-shadow: 0px 1px 0px #fff; 
+                -webkit-transition: .3s ease-in-out; 
+                -moz-transition: .3s ease-in-out; 
+                -o-transition: .3s ease-in-out; 
+	        }
+	        .main>.form .txt:focus {border: 1px solid #fafafa;-webkit-box-shadow: 0px 0px 6px #007eff;-moz-box-shadow: 0px 0px 5px #007eff;box-shadow: 0px 0px 5px #007eff;}
+	        .main>.form .btn{
+	            background:#1e95e5; margin-top:10px;
+	            color:#b7d4ec;
+	            color:rgba(255,255,255,.7);
+	            box-shadow:0 1px 0 rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.15) inset;
+	            border:1px solid #147dcd;
+	            cursor:pointer;
+	            display:inline-block;
+	            font-size:14px;
+	            line-height:18px;
+	            text-shadow:0 1px 0 rgba(0,0,0,.2);
+	            padding:6px 15px;
+	            text-align:center;
+	            vertical-align:middle;
+	            border-radius:5px;
+	            float:left;
+	            *color:#b7d4ec;
+	            -webkit-appearance:none;
+	            outline:none;
+	
+	        }
+            .main>.form .btn:active{ background:#1d8fdb;box-shadow:0 1px 0 rgba(255,255,255,.15);outline:none;outline:0px; }
+            .main>.form .btn:hover{ box-shadow:0 0 10px rgba(255,255,255,.5),0 1px 0 rgba(255,255,255,.15) inset; }
+            .main>.form .btn:focus{ outline:none; }
+            .nav-style { position: fixed; top: 30px; right: 40px; }
+            .nav-style>A { font-size: 14px;
+                color: #b7d4ec;padding: 5px 15px; margin:5px;cursor:pointer;
+                border-radius: 50px;
+                box-shadow: 0 1px 0 rgba(255,255,255,.15),0px 1px 3px rgba(0,0,0,.2) inset;
+                background: #0c6ebf9;
+                line-height: 22px;
+            }
+            .qrcode { position: fixed; top: 80px; right: 40px; }
+            .qrcode>IMG { width:128px; height:128px; }
+            .nav-style>A:hover { box-shadow:0 0 10px rgba(255,255,255,.5),0 1px 0 rgba(255,255,255,.15) inset; }
+            .nav-style>A.curr{color: rgba(255,255,255,.7);background: rgba(0,0,0,.1);}
+            .forgetPWD>DIV { padding:10px;}
+            .forgetPWD>DIV>IMG { float:left; width:40px; height:40px; }
+            .forgetPWD>DIV>DIV { float:left; height:100%; }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="logo">
+                <img class="logo-img" src="images/login/logo.png" />
+                <img class="logo-info"src="images/login/moto.png" />
+            </div>
+            <div class="form">
+                <div class="form-list" id="forms">
+                    <form class="login" onsubmit="return false;" >
+                        <input class="txt" type="text" name="uid" reg="\S{1,}" tabindex="1" value="用 户 名" default="用 户 名" error="用户名不能为空" onblur="onBlur(this)" onfocus="onFocus(this)" />
+                        <input class="txt pwd" type="password" name="pwd" reg="\S{3,}" tabindex="2" error="密码卡必须四位以上" default="密 码" onblur="onBlur(this)" onfocus="onFocus(this)" />
+                        <span class="pwd-mark"></span>
+                        <input class="btn" type="button" tabindex="3" value="登录" />
+                    </form>
+                    <form class="loginBYIC" onsubmit="return false;" >
+                        <input class="txt" type="text" name="icCard" reg="\S{3,}" tabindex="4" value="IC卡" error="IC卡必须四位以上" default="IC卡" onblur="onBlur(this)" onfocus="onFocus(this)" />
+                        <input class="btn" type="button" tabindex="5" value="登录" />
+                    </form>
+                    <form class="forgetPWD" onsubmit="return false;" >
+                        <input class="txt" type="text" name="email" reg="^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+" error="邮件格式不对(如：test123@163.com)" tabindex="6" value="邮 件" default="邮 件" onblur="onBlur(this)" onfocus="onFocus(this)" />
+                        <input class="btn" type="button" tabindex="7" value="发送" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="nav-style" id="navStyle"><a idx="0" class="curr">登陆</a><a idx="1">IC卡登陆</a><a idx="2">忘记密码</a></div>
+        <div class="pf" style="top:20px; left:20px;width:250px;">
+            <img style="width:96px;height:96px;" src="images/xd-qrcode.png" alt="Android客户端下载" title="Android客户端下载" />
+            <img style="width:96px;height:96px;margin-left:20px;" src="images/ios-qrcode.png" alt="IOS客户端下载" title="IOS客户端下载" />
+        </div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function onBlur(me) {
+            var _input = $(me);
+            if (!_input.value) {
+                _input.value = _input.attr('default');
+                //if (_input.className.indexOf('pwd') != -1) { _input.attr('type', 'text'); }
+            }
+        }
+        function onFocus(me) {
+            var _input = $(me);
+            if (_input.value == _input.attr('default')) { _input.value = ''; }
+            if (_input.attr('type') == 'password') { return; }
+            //if (_input.className.indexOf('pwd') != -1) { _input.attr('type', 'password'); }
+        }
+        $(function () {
+            var _curr = $('navStyle').fc(), _mask;
+            $('forms').chr(0).chr(0).focus();
+            $DB.evt('click', function (e) {
+                var e = $.e.fix(e), _e = e.t, _idx = +_e.attr('idx');
+                if (_e.className == 'btn') { submit(_e); return; }
+                if (_e.tagName == 'A' && !isNaN(_idx)) { $('forms').ease(['margin-left'], [-(_idx * 262)], 600, 'easeOutQuart', { e: function () { } }); _curr.dc('curr'); _e.ac('curr'); _curr = _e; }
+                ValidateTips.hide();
+            }).evt('keyup', function (e) { var e = $.e.fix(e), _e = e.t; if (e.code == 13) { submit(_e); } });
+            function submit(_e) {
+                var _inputs = _e.pn(), _vals = '', _action = _e.pn().className.trim();
+                for (var i = 0, _len = _inputs.length; i < _len; i++) {
+                    var _input = $(_inputs[i]), _reg = _input.attr('reg'), _pos = _input.pos(), _val = _input.value;
+                    if (!_reg) { continue; }
+                    if (!(new RegExp(_reg)).test(_val) || _val == _input.attr('default')) {
+                        _input.focus();
+                        ValidateTips.setText(_input.attr('error') || '非法输入!').setPos(_pos.x, _pos.y + _pos.h + 10).show();
+                        return false;
+                    }
+                    _vals += '&' + _input.attr('name') + '=' + _val;
+                }
+                ValidateTips.hide(); showMask(true);
+                $.Util.ajax({
+                    url: 'meeko.aspx',
+                    ifCheckCookie: false,
+                    args: 'm=SYS_CM_USERS&action=' + _action + _vals,
+                    onSuccess: function (d) {
+                        showMask(false);
+                        if (_action == 'forgetPWD') {
+                            _inputs.h('<div><img src="images/icon/40_40/success_iconx.png" /><div>发送邮件成功(<font color="red">如果十分钟之后还未收到邮件，可能系统被当成垃圾邮件了哦</font>)</div></div>');
+                        } else {
+                            if ($.ck.get('SESSIONID')) { $.ck.remove('SESSIONID'); }
+                            $.ck.set('SESSIONID', d.get(0).trim());
+                            window.location.href = 'main.html';
+                        }
+                    },
+                    onError: function (d) {
+                        showMask(false);
+                        var _strErr = d.data||'用户名或密码错误';
+                        switch (_action) {
+                            case 'forgetPWD':
+                                _strErr = '跟邮件绑定的账号不存在';
+                                break;
+                            case 'loginBYIC':
+                                _strErr = 'IC账号错误';
+                                break;
+                        }
+                        MTips.show(_strErr, 'error'); _inputs[0].focus();
+                        for (var i = 0, _len = _inputs.length - 1; i < _len; i++) { _inputs[i].value = ''; }
+                    }
+                });
+            }
+            function showMask(ifShow) {
+                if (ifShow) {
+                    _mask = new $.UI.Mask({ p: $DB, alpha: 12 });
+                    _mask.eContent.cn('tac').css('padding:20px;z-index:20;').h('<img src="images/loading/gif/loading51.gif" />');
+                } else {
+                    if (_mask) { _mask.remove(); _mask.eContent.r(); _mask = null; }
+                }
+            }
+        });
+    </script>
+</html>

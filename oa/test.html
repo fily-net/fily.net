@@ -1,0 +1,31 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>测试页面</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="测试页面" />
+        <meta name="keywords" content="测试页面" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+    </head>
+    <body>
+        <div id="test">fasdfasdf</div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/miui.js" type="text/javascript"></script>
+    <script src="script/meeko_event_handler.js" type="text/javascript"></script>
+    <script src="script/meeko_ext.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+           // $DB.load('View/oa/HomeManager.js', function (cb) { console.log(cb); });
+            //$DB.load('test/text.html', function (cb) { console.log(cb); });
+
+            //var a = ['1', '2', '3'];
+            //a.ec(function (i) { console.log(i, this[i]); })
+            $('test').print();
+            //.print();
+        });
+    </script>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>综合信息系统</title>
+    <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+    <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+    <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+    <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+    <link type="text/css" rel="Stylesheet" href="script/lib/codemirror.css" />
+</head>
+<body>
+    <div id="print" class="w80 h20 lh20 b_14 tac p5 bc_18 m10 cp pf">打印</div>
+    <div id="content" class="ma cb r5" style="width:650px; margin-bottom:20px;"></div>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            try{
+                var pri = new $.Util.printer($('content'));
+                $('print').evt('click', function (e) { pri.print(); });
+            }catch(e){
+                
+            }
+        })
+        window.setContent = function(str){ $('content').h(str);}
+    </script>
+</body>
+</html>

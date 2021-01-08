@@ -1,0 +1,32 @@
+﻿body {
+}
+/*section specific colors*/
+#mega-m a.mega-m-section-link-two {
+  background-color: #a3a600;
+}
+#mega-m a.mega-m-section-link-three {
+  background-color: #3e6584;
+}
+#mega-m a.mega-m-section-link-four {
+  background-color: #2e94c7;
+}
+#mega-m a.mega-m-section-link-five {
+  background-color: #6950b7;
+}
+#mega-m a.mega-m-section-link-six {
+  background-color: #2dab66;
+}
+#mega-m a.mega-m-section-link-seven {
+  background-color: #e37b40;
+}
+#mega-m a.mega-m-section-link-nine {
+  background-color: #194d58;
+}
+
+#mega-m a.mega-m-section-link-ten {
+  background-color: #b06062;
+}
+
+
+
+div.box-hover{background-color:#e6e6e6;}

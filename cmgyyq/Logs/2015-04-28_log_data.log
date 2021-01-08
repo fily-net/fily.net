@@ -1,0 +1,3 @@
+update SYS_WH_MS set delFlag=1,mTime=getdate() where id in (259);
+update SYS_WH_MS set delFlag=1,mTime=getdate() where id in (259,258);
+update SYS_WH_MS set delFlag=1,mTime=getdate() where id in (259,258,254);

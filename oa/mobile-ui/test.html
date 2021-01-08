@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>无锡万物通网科技有限公司</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1" />
+        <meta name="description" content="无锡万物通网科技有限公司" />
+        <meta name="keywords" content="无锡万物通网科技有限公司" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/base.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+    </head>
+    <body>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var a = new $.UI.Panel({ head_h: 45, foot_h: 45 });
+            
+            
+            var tAry = [
+                { text: '公海', type: 'tab' },
+                { text: '公海', type: 'tab' },
+                { text: '公海', type: 'tab' },
+                { text: '私海', type: 'tab' }
+            ];
+            var tab = new $.UI.Tab({ p: a.foot, items: tAry });
+            var lAry = [
+                { id: '1', title: 'xxx', cPerson: 'fsad', cTime: '2013-10-09 11:25:20' },
+                { id: '1', title: 'xxx', cPerson: 'fsad', cTime: '2013-10-09 11:25:20' },
+                { id: '1', title: 'xxx', cPerson: 'fsad', cTime: '2013-10-09 11:25:20' },
+                { id: '1', title: 'xxx', cPerson: 'fsad', cTime: '2013-10-09 11:25:20' }
+            ];
+            var list = new $.UI.List({ p: a.body, items: lAry });
+            
+        });
+    </script>
+</html>

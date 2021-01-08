@@ -1,0 +1,15 @@
+update SYS_CM_FN_TREE set mPerson=2, mTime=getdate(),users=',,',roles=',7,8,12,13,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,45,46,' where id=41;
+update SYS_CM_FN_TREE set mPerson=2, mTime=getdate(),nodeName='首页' where id=41;
+update SYS_CM_USER set delFlag=1,mTime=getdate() where id in (4,7,8,9,10,12,11,13,14);
+update SYS_CM_USER set delFlag=1,mTime=getdate() where id in (15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33);
+update SYS_CM_USER set delFlag=1,mTime=getdate() where id in (15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,52,51,50,49,48,47,45,46,44,43,41,42,40,38,39,37,36);
+update SYS_CM_USER set delFlag=1,mTime=getdate() where id in (15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,52,51,50,49,48,47,45,46,44,43,41,42,40,38,39,37,36,53,34,35,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69);
+update SYS_CM_USER set delFlag=1,mTime=getdate() where id in (15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,52,51,50,49,48,47,45,46,44,43,41,42,40,38,39,37,36,53,34,35,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70);
+insert into SYS_CM_USER (uid,icCard,sex,birthday,department,post,titles,fixedPhoneNum,mobilePhoneNum,agents,address,email,ifEnableEmail,note,cName,pinYin,cPerson) values ('张三','zhangsan','132','2014-11-04','','','153','13578973487','13578973487',',','','8760899@qq【．]com','12','','张三',dbo.SYS_GET_PINYIN('张三'),2);
+insert into SYS_CM_USER (uid,icCard,sex,birthday,department,post,titles,fixedPhoneNum,mobilePhoneNum,agents,address,email,ifEnableEmail,note,cName,pinYin,cPerson) values ('李四','lishi','133','','','','153','13923979723','13923979723',',','','234242342@qq【．]com','12','','李四',dbo.SYS_GET_PINYIN('李四'),2);
+insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('100.png','2014111804083713833','png','100','test',30278,1,',1,4,',103,2,4,2);
+update SYS_CM_FILES set mPerson=2, mTime=getdate(),sons=sons+1 where id=4;
+insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (71,'会议流程',',2,',2);
+insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (71,13,'开始',',15,',0,1,10,',2,','',',1994,',1,1,1994,2);
+update dbo.SYS_WF_INSTANCE set mPerson=2, mTime=getdate(),sons=sons+1 where id=1994;
+insert into SYS_CM_MEETING (title,address,room,rate,sTime,eTime,note,observers,link,year,month,day,dateId,dateAll,wfId,cPerson) values ('test','test','151','149','2014-11-19 16:7:00','2014-11-19 16:7:00','fasdfasfsadf','',',175,','2014','11','19','20141119','2014-11-19',1994,2);

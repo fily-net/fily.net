@@ -1,0 +1,3 @@
+update SYS_WF_DEFINITION set mPerson=2, mTime=getdate(),users=',8,13,16,23,29,32,36,42,46,50,55,59,' where id=82;
+update SYS_CM_ROLE set mPerson=2, mTime=getdate(),nodeName='自来水分公司' where id=31;
+update SYS_WF_DEFINITION set mPerson=2, mTime=getdate(),users=',23,27,63,64,' where id=84;

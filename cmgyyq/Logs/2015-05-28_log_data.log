@@ -1,0 +1,1 @@
+insert into dbo.PRO_MG (proCode,proType,proNature,proArea,address,customer,contact,proSource,acreage,outPutValue,collectTime,issuedTime,execDept,deadline,qingZhao,note,users,observers,cPerson) values ('test005','457','475','483','test005','test','test','493',0,21.87,'2015-05-04','2015-05-13',499,'2015-05-05','9','',',20,22,',',20,22,',2);

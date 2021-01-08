@@ -1,0 +1,193 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>综合信息系统</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="综合信息系统" />
+        <meta name="keywords" content="综合信息系统" />
+        <link type="text/css" rel="Stylesheet" href="css/main.css" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/font-awesome.css" />
+        <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+        <link type="text/css" rel="Stylesheet" href="script/lib/codemirror.css" />
+    </head>
+    <body>
+        <div class="main-root">
+            <div class="main-head">
+                <div class="nav-logo">
+                    <div class="info" id="info"></div>
+                    <div class="menu">
+                        <ul>
+                            <li name="submitBug">
+                                <i class="fa fa-bug"></i>
+                                <span>提交系统Bug</span>
+                            </li>
+                            <li name="holiday">
+                                <i class="fa fa-calendar" ></i>
+                                <span>节假日</span>
+                            </li>
+                            <li name="refresh">
+                                <i class="fa fa-refresh"></i>
+                                <span>刷新</span>
+                            </li>
+                            <li name="logout">
+                                <i class="fa fa-power-off"></i>
+                                <span>注销</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav-menu-left" id="nav-menu-left"></ul>
+                    <ul class="nav-menu-right" id="nav-menu-right"></ul>
+                </div>
+            </div>
+            <div class="main-body" id="main-body"></div>
+            <div class="main-foot"></div>
+        </div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_event_handler.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script src="script/meeko_list.js" type="text/javascript"></script>
+    <script src="script/excanvas.js" type="text/javascript"></script>
+    <script src="script/ext/ZeroClipboard.js" type="text/javascript"></script>
+    <script src="script/kindEditor/kindeditor.js" type="text/javascript"></script>
+    <script src="script/lib/codemirror.js" type="text/javascript"></script>
+    <script src="script/mode/javascript/javascript.js" type="text/javascript"></script>
+    <script src="script/mode/scheme/scheme.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            if (!$.ck.get('SESSIONID')) { window.location.href = 'index.html'; return; }
+            var _mTips = {}, currTips, currID, view, currLi, dataLiAry;
+            function onInit() {
+                $.global.setImgPath('');
+                $.Util.ajax({
+                    args: 'm=SYS_CM_HOME&action=getUserInfos&dataType=json',
+                    onSuccess: function (d) {
+                        var _sAry = d.get(0), _dAry = [], _scAry = eval(d.get(2) || '[]'), _users = eval(d.get(3) || '[]');
+                        if (_sAry) { _dAry = eval(_sAry); }
+                        if (!d.get(1)) {
+                            MTips.show('您还未登陆, 请先登录!', 'warn');
+                            setTimeout(function () { window.location.href = 'index.html'; }, 5000); return;
+                        }
+                        dataLiAry = _dAry;
+                        loadMenu(dataLiAry);
+                        loadUserInfo(eval(d.get(1))[0]);
+                        addShortCuts(_scAry);
+                        view = new $.UI.View({ p: $('main-body') });
+                        urlRouting();
+                    },
+                    onError: function (d) { MTips.show(d.data, 'warn'); window.location.href = 'index.html'; }
+                });
+            }
+
+            function urlRouting() {
+                fireClickLi(0);
+            }
+
+            function formatUrlSearch() {
+                var _search = window.location.search.replace('?','');
+                if (_search) {
+
+                } else {
+                    return { index: 0 };
+                }
+            }
+
+            function loadUserInfo(info) {
+                $('info').h('<span>' + info.cName + '</span><span><img title="点击查看我个人的信息" class="avatar" src="images/avatar/' + info.avatar + '" /></span>');
+            }
+
+            function loadMenu(menuAry) {
+                var _rAry = menuAry, _eNav = $('nav-menu-left');
+                for (var i = 0, _len = _rAry.length; i < _len; i++) {
+                    var _obj = _rAry[i];
+                    var _title = _obj.nodeName;
+                    if (_title) { _title = '<a url="' + _obj.url + '">' + _title + '</a>'; }
+                    var _eLi = _eNav.adElm('', 'li').h('<a class="icon ' + _obj.icon + '"></a><div>' + _title + '</div>').attr('index', i).attr('idx', _obj.id).attr('url', _obj.url);
+                    _obj.eLi = _eLi;
+                }
+                _eNav.evt('click', function (e) {
+                    var e = $.e.fix(e), _e = e.t;
+                    var _eLi = findMenuLi(_e);
+                    fireClickLi(_eLi.attr('index'));
+                });
+            }
+
+            function fireClickLi(index) {
+                var _eLi = dataLiAry[(index || 0)].eLi, _url = _eLi.attr('url');
+                if (currLi) { currLi.dc('sel'); }
+                currLi = _eLi;
+                currLi.ac('sel');
+                if (_url) {
+                    view.loadView({ url: _url });
+                } else {
+                    view.loadView({ url: 'View/main/ModuleView.js', moduleId: _eLi.attr('idx') });
+                }
+            }
+
+            function findMenuLi(e) {
+                if (e.tagName == 'LI') {
+                    return e;
+                } else {
+                    return findMenuLi(e.pn());
+                }
+            }
+
+            function addShortCuts(ary) {
+                for (var i = 0, _len = ary.length; i < _len; i++) {
+
+                }
+            }
+
+            $DB.evt('click', function (e) {
+                var e = $.e.fix(e), _e = e.t;
+                var _tn = _e.tagName;
+                if (_tn == 'FONT') { _e = _e.pn(); _tn = _e.tagName; }
+                switch (_tn) {
+                    case 'IMG':
+                        if (_e.className == 'avatar') { view.loadView({ url: 'View/user/UserInfo.js' }); disTips(); }
+                        break;
+                    case 'A':
+                        if (!_e.attr('url')) { return; }
+                        var _url = _e.attr('url').trim();
+                        if (_url) { var _attrs = _e.attributes, _args = {}; for (var i = 0, _len = _attrs.length; i < _len; i++) { var _attr = _attrs[i]; _args[_attr.name] = _attr.nodeValue; }; view.loadView(_args); disTips(); }
+                        break;
+                    case 'SPAN':
+                    case 'LI':
+                        if (_tn == 'SPAN') { _e = _e.pn(); }
+                        if (!_e.attr('name')) { return; }
+                        switch (_e.attr('name')) {
+                            case 'holiday':
+                                view.loadView({ url: 'View/oa/HolidayQuery.js' }); disTips();
+                                break;
+                            case 'refresh':
+                                MConfirm.setWidth(350).show('如果刷新, 数据将丢失, 确定刷新?').evt('onOk', function () {
+                                    window.location.reload();
+                                });
+                                break;
+                            case 'changePwd':
+                                view.loadView({ url: 'View/user/ChangePwd.js' }); disTips();
+                                break;
+                            case 'logout':
+                                MConfirm.setWidth(250).show('<font color="red">确定注销该账号?</font>').evt('onOk', function () {
+                                    $.Util.ajax({ args: 'm=SYS_CM_USERS&action=logout', onSuccess: function () { $.ck.clear(); MTips.show('注销成功', 'ok'); setTimeout(function () { window.location.href = 'index.html'; }, 1000); }, onError: function () { MTips.show('注销失败!', 'error'); } });
+                                });
+                                break;
+                            case 'submitBug':
+                                view.loadView({ url: 'View/bug/BugList.js' }); disTips();
+                                break;
+                        }
+                        break;
+                }
+            });
+
+            function disTips() { if (currTips) { currTips.hide(); } currTips = null; currID = null; }
+            onInit();
+        });
+    </script>
+</html>

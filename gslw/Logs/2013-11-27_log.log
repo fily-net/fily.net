@@ -1,0 +1,14 @@
+[2013-11-27 15:34:24] update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=18;
+[2013-11-27 15:34:26] update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=17;
+[2013-11-27 15:34:30] update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=16;
+[2013-11-27 15:34:32] update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=13;
+[2013-11-27 15:34:34] update SYS_QT_PAPER_TOPIC set delFlag=1,mTime=getdate() where id=10;
+[2013-11-27 15:34:54] insert into SYS_QT_PAPER_TOPIC (title,link,type,paperId,cPerson) values ('测试一','','1','8',2);
+[2013-11-27 15:34:54] insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,19,'1',2);
+[2013-11-27 15:34:54] insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,19,'2',2);
+[2013-11-27 15:34:54] insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,19,'3',2);
+[2013-11-27 15:35:08] insert into SYS_QT_PAPER_TOPIC (title,link,type,paperId,cPerson) values ('测试二','','2','8',2);
+[2013-11-27 15:35:08] insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,20,'1',2);
+[2013-11-27 15:35:08] insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,20,'2',2);
+[2013-11-27 15:35:08] insert into SYS_QT_PAPER_TOPIC_ITEMS (paperId,topicId,title,cPerson) values (8,20,'3',2);
+[2013-11-27 15:35:21] insert into SYS_QT_PAPER_TOPIC (title,link,type,paperId,cPerson) values ('测试三','','3','8',2);

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>问卷调查-问卷题目</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/base.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+        <style type="text/css">
+            html{height: 100%;}
+            html, body, ul, li{margin: 0;padding: 0;border: 0;outline: 0;}
+            ul, li {list-style:none;}
+            .main {position: absolute; width:100%; height:100%; overflow: hidden; top:0px;left:0px;font-size: 14px;color: #555;}
+            .header 
+            {
+                position:absolute; font-size:12px; width:100%; top:0px;left:0px; overflow:hidden; -webkit-user-select:none; -khtml-user-select:none; -moz-user-focus:ignore; -moz-user-select:none; -moz-user-input:disabled;
+                height: 43px;
+                border-top: 1px solid #f6986f;
+                background: #e05d23;
+                background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f57741),color-stop(100%,#e05d23));
+                background: -webkit-linear-gradient(top,#f57741 0,#e05d23 100%);
+                background: linear-gradient(to bottom,#f57741 0,#e05d23 100%);
+            }
+            .header>.header-arrow{position: absolute;left: 0;top: -1px;z-index: -1;display: inline-block;width: 4px;height: 4px;background: #000;}
+            .header>.header-list{z-index: 10;height: 43px;line-height: 43px; padding: 0 10px;color: #fff;}
+            .header>.header-list li:first-child {position: absolute;top: 0;left: 10px;width: 31px;z-index: 3; }
+            .header>.header-list li:nth-child(2) {width: 100%;font-size: 18px;text-align:center;font-weight: 600;}
+            .header>.header-list li:last-child {position: absolute;top: 0;right: 10px;width: 95px;text-align: right;}
+            .header>.header-arrow-right{left: auto;right: 0;}
+            .header>.header-mask{position: absolute;left: 0;top: 0;width: 100%;height: 43px;background-size: 2px 2px;opacity: .3;}
+            .page-body { position:absolute; width:100%;display:table-row;left:0px; right:0px; overflow:auto;top:43px;bottom:50px;}
+            .page-body>DIV{ font-size:13px; overflow: auto; border-radius: 5px; -webkit-border-radius: 5px;width:100%; height:100%; }
+            .page-body>DIV>.title{ font-weight:bold; margin-top:10px; }
+            .foot { background-color:#FFF; position:absolute;width:100%;display:table-row;left:0px;right:0px;overflow:hidden;bottom:0px;height:50px;line-height:50px;-moz-border-radius: 0px 0px 5px 5px;-webkit-border-radius: 0px 0px 5px 5px;border-radius: 0px 0px 5px 5px;box-shadow: 0 0 3px #a1afb3;box-shadow: 0 1px 9px #9c9c9c;}
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="header-list">
+                    <ul>
+                        <li><a class="btn_ico_bg" style="width:60px;" onclick="window.location.href = 'paper-list.html';">返回</a></li>
+                        <li id="title"></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page-body Waterfall scroll-webkit"><ul id="item-body" class="ListItem"></ul></div>
+            <div class="foot">
+                <a class="btn_ico_bg" style="width:120px; float:left;margin-top:8px; margin-left:15px;" onclick="window.preTopic();">上一题</a>
+                <a class="btn_ico_bg" style="width:120px; float:right;margin-top:8px; margin-right:15px;" onclick="window.nextTopic();">下一题</a>
+            </div>
+        </div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_event_handler.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var _idAry = [], _valAry, _eBody = $('item-body'), _allH = 0, _curr, _first;
+            var _html = '<div class="title"><div class="_title">{0}</div></div><div class="content"></div><div class="attach">{1}</div>';
+            function init() {
+                var paperId = $.getCookie('PAPERID');
+                $.Util.ajax({
+                    args: 'm=SYS_CM_OA&action=loadpaperTopics&paperId=' + paperId + '&dataType=json',
+                    ifCheckCookie: false,
+                    onSuccess: function (d) {
+                        var _pInfo = eval(d.get(1) || '[]')[0];
+                        $('title').h(_pInfo.nodeName); _valAry = _idAry = eval(d.get(0) || '[]');
+                        nextTopic();
+                    },
+                    onError: function (d) { MTips.show(d.data || '加载失败', 'error'); }
+                });
+            }
+            function nextTopic() {
+                if (_curr && _curr.next) {
+                    var _next = _curr.next;
+                    _eBody.ease(['margin-top'], [-_next.oldAllHeight], 600, 1, { e: function () { _curr = _next; _curr.eLi.show(); } });
+                    return;
+                }
+                if (!_idAry.length) { return; }
+                var _topic = _idAry.shift(), _orig = _allH, _type = +_topic.type;
+                $.Util.ajax({
+                    url: 'http://www.creativehub.cn/xd-copy/api.aspx',
+                    args: 'm=SYS_CM_OA&action=loadTopicItems&topicId=' + _topic.id + '&dataType=json',
+                    ifCheckCookie: false,
+                    onSuccess: function (d) {
+                        var _dAry = eval(d.get(0) || '[]'), _fileAry = eval(d.get(1) || '[]'), _sFile = '', _sonsAry = [], _obj = {};
+                        for (var i = 0; i < _fileAry.length; i++) { var _file = _fileAry[i]; _sFile += '<a href="Module/SYS_CM_FILES.aspx?action=downloadFile&id=' + _file.id + '" >' + _file.nodeName + '</a>'; }
+                        if (!_sFile) { _sFile = '<a>没有相关附件</a>'; }
+                        var _temp = _eBody.adElm('', 'li').h(_html.format(_topic.title, '<span>附件：</span><div class="files">' + _sFile + '</div>')), _tempP = _temp.fc().ns();
+                        switch (_type) {
+                            case 1: _type = 'Radios'; break;
+                            case 2: _type = 'CheckBoxs'; break;
+                            case 3: _type = 'TextArea'; break;
+                        }
+                        for (var i = 0; i < _dAry.length; i++) {
+                            var _item = _dAry[i];
+                            _sonsAry.push({ p: _tempP, value: _item.id, text: _item.title, css: 'float:none;width:100%;' });
+                        }
+                        var fItem = new $.UI.FormItem({ p: _tempP, comType: _type, ifHead: false, ifFoot: false, sons: _sonsAry, css: 'width:100%;' }), _h = _temp.csn('height');
+                        fItem.doms.eBody.css('width:100%;').fc().css('width:100%;');
+                        _eBody.ease(['margin-top'], [-_allH], 600, 1, { });
+                        _obj.oldAllHeight = _allH; _allH += _h + 7;
+                        _obj.height = _h; _obj.newAllHeight = _allH; _obj.input = fItem; _obj.eLi = _temp;
+                        if (!_first) { _first = _obj; }
+                        if (_curr) { _obj.pre = _curr; _curr.next = _obj; }
+                        _curr = _obj;
+                    },
+                    onError: function (d) { MTips.show(d.data || '加载失败', 'error'); }
+                });
+            }
+            function preTopic() {
+                var _pre = _curr.pre;
+                if (_pre) { _curr.eLi.hide(); _eBody.ease(['margin-top'], [-_pre.oldAllHeight], 600, 1, {}); _curr = _pre; }
+            }
+            window.nextTopic = nextTopic;
+            window.preTopic = preTopic;
+            init();
+        });
+    </script>
+</html>

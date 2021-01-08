@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="ch">
+    <meta charset="UTF-8">
+    <title>东黎绒毛制品有限公司--企业文化</title>
+    <link type="text/css" href="css/reset.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/jScrollbar.jquery.css" type="text/css" />
+</head>
+<body>
+
+<div class="header">
+    <div class="chDiv"><a href="#"><span>Chinese</span></a><a href="#"><span>|</span></a><a href="#"><span>English</span></a></div>
+    <ul id="nav" class="nav clearfix" >
+        <li class="nLi">
+            <h3><a href="index.html" target="_blank" class="subb">首页</a></h3>
+        </li>
+        <li class="nLi on">
+            <h3>
+                <a href="javascript:;" target="_blank" class="subb">关于我们</a>
+                <ul class="sub">
+                    <li><a href="gsjj_01.html">公司介绍</a></li>
+                    <li><a href="qywh_02.html">企业文化</a></li>
+                    <li><a href="gsry_03.html">公司荣誉</a></li>
+                    <li><a href="cpjj_04.html">产品介绍</a></li>
+                    <li><a href="qybz_05.html">质量保证</a></li>
+                </ul>
+            </h3>
+        </li>
+        <li class="nLi">
+            <!-- 假设当前频道为“预告片”，手动或后台程序添加titOnClassName类名（默认是'on'），相当于设置参数defaultIndex:1。若同时设置参数returnDefault:true，则鼠标移走后0.3秒返回当前频道 -->
+            <h3><a href="brand.html" target="_blank" class="subb">品牌与产品</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="media.html" target="_blank" class="subb">媒体播放</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="javascript:;" target="_blank" class="uno"><img src="images/logo.png"> </a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="zxdt.html" target="_blank" class="subb">资讯动态</a></h3>
+
+        </li>
+        <li class="nLi">
+            <h3><a href="message.html" target="_blank" class="subb">留言板</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="javascript:;" target="_blank" class="subb">网上商城</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="contactus.html" target="_blank" class="subb">联系我们</a></h3>
+        </li>
+    </ul>
+</div>
+<div class="lunbo">
+    <img src="images/bgImg.png" width="100%">
+    <a href="#" style="position: absolute;top:50%;margin-top:-84px;"><img src="images/arr01.png"> </a>
+    <a href="#" style="position: absolute;right:0;top:50%;margin-top:-84px;"><img src="images/arr02.png"> </a>
+    <div class="boxOne">
+    </div>
+    <div class="boxTwo">
+       <div class="zlbz">
+
+       </div>
+       <ul class="ulZlbz">
+           <li>1、经验丰富的收购队伍</li>
+           <li>2、先进合理的科学检测手段</li>
+           <li>3、科学合理的工艺标准</li>
+           <li>4、技术过硬的一线员工</li>
+           <li>5、精、细、严的的加工制作过程</li>
+           <li>6、半成品环节的严格把关制度</li>
+           <li>7、质量方针、质量目标的有效合理贯彻</li>
+       </ul>
+
+    </div>
+</div>
+<div class="content">
+    <ul class="ulCon">
+        <li><a href="#"></a> </li>
+        <li><a href="#"></a> </li>
+        <li><a href="#"></a> </li>
+    </ul>
+</div>
+<div class="footer">版权所有:赤峰东黎绒毛制品有限公司 All Rights Reserved:SUNRISE CASHMERE INC.技术支持:天启网络 网站备案号:蒙ICP备 13003182号</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery-mousewheel.js"></script>
+<script type="text/javascript" src="js/jScrollbar.jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.jScrollbar3').jScrollbar();
+    });
+</script>
+<script id="jsID" type="text/javascript">
+
+    jQuery("#nav").slide({
+        type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+        titCell:".nLi", //鼠标触发对象
+        targetCell:".sub", //titCell里面包含的要显示/消失的对象
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:0, //鼠标延迟触发时间（默认150）
+        returnDefault:true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+    });
+</script>
+</body>
+</html>

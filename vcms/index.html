@@ -1,0 +1,262 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>高科技文化装备一站式查询系统</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="高科技文化装备一站式查询系统" />
+    <meta name="keywords" content="高科技文化装备一站式查询系统" />
+    <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+    <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+    <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+    <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+    <link type="text/css" rel="Stylesheet" href="script/lib/codemirror.css" />
+    <style type="text/css">
+        html {
+            background: url("images/league/bg.png") no-repeat;
+            _background: none;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+        }
+
+        body {
+            color: rgba(255,255,255,.7);
+            font: 13px/22px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+            text-shadow: 0 1px 0 rgba(0,0,0,.3);
+        }
+
+        .main {
+            width: 100%;
+            height: 100px;
+        }
+
+            .main > ._body {
+                width: 100%;
+                overflow: hidden;
+            }
+
+                .main > ._body > .form {
+                    overflow: hidden;
+                    bottom: 0px;
+                    left: 0px;
+                    width: 908px;
+                    height: 540px;
+                    background: url("images/league/login_bg.png") no-repeat;
+                    background-position: right;
+                    margin: 50px auto 0px auto;
+                }
+
+                    .main > ._body > .form > .login {
+                        position: absolute;
+                        width: 262px;
+                        margin-top: 190px;
+                        margin-left: 621px;
+                    }
+
+                        .main > ._body > .form > .login .inp {
+                            display: block;
+                            width: 220px;
+                            height: 26px;
+                            *height: 23px;
+                            padding: 4px 7px;
+                            line-height: 18px;
+                            margin: 10px 0px 10px 5px;
+                            font-size: 12px;
+                            line-height: 18px;
+                            background: #e8f4fc;
+                            color: #888;
+                            cursor: text;
+                            box-shadow: 0 1px 0 rgba(255,255,255,.3),0 1px 3px rgba(0,0,0,.3) inset;
+                            background-clip: padding-box;
+                            -webkit-border-radius: 5px;
+                            -moz-border-radius: 5px;
+                            border-radius: 5px;
+                            outline: none;
+                            text-shadow: 0px 1px 0px #fff;
+                            -webkit-transition: .3s ease-in-out;
+                            -moz-transition: .3s ease-in-out;
+                            -o-transition: .3s ease-in-out;
+                        }
+
+                        .main > ._body > .form > .login .pwd {
+                            ime-mode: disabled;
+                            background: url("images/league/loginpage.png") no-repeat;
+                        }
+
+                        .main > ._body > .form > .login .user-mark {
+                            float: left;
+                            margin: 5px 3px;
+                            cursor: pointer;
+                            background: url("images/league/user.png") no-repeat;
+                            display: inline-block;
+                            width: 16px;
+                            height: 16px;
+                        }
+
+                        .main > ._body > .form > .login .pwd-mark {
+                            float: left;
+                            margin: 5px 3px;
+                            cursor: pointer;
+                            background: url("images/league/locker.png") no-repeat;
+                            display: inline-block;
+                            width: 16px;
+                            height: 16px;
+                        }
+
+                        .main > ._body > .form > .login .checkbox-mark {
+                            float: left;
+                            margin: 5px 3px;
+                            cursor: pointer;
+                            background: url("images/league/block.png") no-repeat;
+                            display: inline-block;
+                            width: 21px;
+                            height: 21px;
+                        }
+
+                        .main > ._body > .form > .login .checked-mark {
+                            float: left;
+                            margin: 5px 3px;
+                            cursor: pointer;
+                            background: url("images/league/tick.png") no-repeat;
+                            display: inline-block;
+                            width: 21px;
+                            height: 21px;
+                            margin-left: -24px;
+                            margin-top: 6px;
+                        }
+
+                        .main > ._body > .form > .login .txt {
+                            display: inline-block;
+                            float: left;
+                            margin-left: 4px;
+                            width: 186px;
+                            padding: 3px;
+                            font-size: 14px;
+                            background: #e8f4fc;
+                            border: 1px solid transparent;
+                            color: #888;
+                        }
+
+                            .main > ._body > .form > .login .txt:focus {
+                                border: 1px solid #fafafa;
+                                -webkit-box-shadow: 0px 0px 6px #007eff;
+                                -moz-box-shadow: 0px 0px 5px #007eff;
+                                box-shadow: 0px 0px 5px #007eff;
+                            }
+
+                        .main > ._body > .form > .login .btn {
+                            float: left;
+                            background: url("images/league/button.png") no-repeat;
+                            width: 250px;
+                            height: 60px;
+                            border: none;
+                            margin: 0px;
+                            padding: 0px;
+                        }
+
+                            .main > ._body > .form > .login .btn:hover {
+                                background: url("images/league/button_hover.png") no-repeat;
+                            }
+
+            .main > ._foot {
+                width: 100%;
+                margin-top: -85px;
+                overflow: hidden;
+                height: 380px;
+                text-align: center;
+                background: url("images/league/logoboard.png") repeat-x;
+            }
+
+                .main > ._foot IMG {
+                    /*margin: 75px 0px;*/
+                }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="_head"></div>
+        <div class="_body">
+            <div class="form">
+                <form class="login" onsubmit="return false;">
+                    <div class="inp"><span class="user-mark" MTips="用 户 名"></span><input id="login-uid" class="txt" type="text" name="uid" reg="\S{1,}" tabindex="1" placeholder="用 户 名" error="用户名不能为空" /></div>
+                    <div class="inp"><span class="pwd-mark" MTips="密 码"></span><input class="txt pwd" type="password" name="pwd" reg="\S{3,}" tabindex="2" placeholder="密 码" error="密码必须四位以上" /></div>
+                    <div><input class="btn" type="button" tabindex="3" /></div>
+                    <!--<div style="height:32px; line-height:35px; color:#fff; padding-right:45px;"><a class="checkbox-mark"></a><a class="checked-mark"></a><span>记住密码</span><span style="display: inline-block; float:right;">忘记密码?</span></div>-->
+                </form>
+            </div>
+        </div>
+        <div class="_foot"><img src="images/league/logo.png" /></div>
+    </div>
+</body>
+<script src="script/meeko_cp.js" type="text/javascript"></script>
+<script src="script/meeko_ui.js" type="text/javascript"></script>
+<script src="script/meeko_util.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function () {
+var _ifRemain = false;
+$('login-uid').focus();
+$DB.evt('click', function (e) {
+var e = $.e.fix(e), _e = e.t, _idx = +_e.attr('idx');
+if (_e.className == 'btn') { submit(_e); return; }
+if (_e.className == 'checked-mark' || _e.className == 'checkbox-mark') { alert(_e.className); return; }
+if (_e.tagName == 'A' && !isNaN(_idx)) { $('forms').ease(['margin-left'], [-(_idx * 262)], 600, 'easeOutQuart', { e: function () { } }); _curr.dc('curr'); _e.ac('curr'); _curr = _e; }
+ValidateTips.hide();
+}).evt('keyup', function (e) { var e = $.e.fix(e), _e = e.t; if (e.code == 13) { submit(_e); } });
+function submit(_e) {
+var _inputs = _e.pn().pn(), _vals = '', _action = _inputs.className.trim();
+for (var i = 0, _len = _inputs.length; i < _len; i++) {
+var _input = $(_inputs[i]), _reg = _input.attr('reg'), _pos = _input.pos(), _val = _input.value;
+if (!_reg) { continue; }
+if (!(new RegExp(_reg)).test(_val) || _val == _input.attr('default')) {
+_input.focus();
+ValidateTips.setText(_input.attr('error') || '非法输入!').setPos(_pos.x, _pos.y + _pos.h + 10).show();
+return false;
+}
+_vals += '&' + _input.attr('name') + '=' + _val;
+}
+ValidateTips.hide(); showMask(true);
+$.Util.ajax({
+url: 'api.aspx',
+ifCheckCookie: false,
+args: 'm=SYS_CM_USERS&action=' + _action + _vals,
+onSuccess: function (d) {
+showMask(false);
+if (_action == 'forgetPWD') {
+_inputs.h('<div><img src="images/icon/40_40/success_iconx.png" /><div>发送邮件成功(<font color="red">如果十分钟之后还未收到邮件，可能系统被当成垃圾邮件了哦</font>)</div></div>');
+} else {
+if ($.ck.get('SESSIONID')) { $.ck.remove('SESSIONID'); }
+$.ck.set('SESSIONID', d.get(0).trim());
+window.location.href = 'main.html';
+}
+},
+onError: function (d) {
+showMask(false);
+var _strErr = d.data || '用户名或密码错误';
+switch (_action) {
+case 'forgetPWD':
+_strErr = '跟邮件绑定的账号不存在';
+break;
+case 'loginBYIC':
+_strErr = 'IC账号错误';
+break;
+}
+MTips.show(_strErr, 'error'); _inputs[0].focus();
+for (var i = 0, _len = _inputs.length - 1; i < _len; i++) { _inputs[i].value = ''; }
+}
+});
+}
+function showMask(ifShow) {
+if (ifShow) {
+_mask = new $.UI.Mask({ p: $DB, alpha: 12 });
+_mask.eContent.cn('tac').css('padding:20px;z-index:20;').h('<img src="images/loading/gif/loading51.gif" />');
+} else {
+if (_mask) { _mask.remove(); _mask.eContent.r(); _mask = null; }
+}
+}
+});
+</script>
+</html>

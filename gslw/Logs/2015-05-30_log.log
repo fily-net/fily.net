@@ -1,0 +1,14 @@
+[2015-05-30 10:58:54] insert into SYS_WF_INDEX (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('106','施工合同会签',',1,4,106,',3,3,2);
+[2015-05-30 11:16:33] insert into SYS_CM_ROLE (nodeName,parentPath,treeOrder,depth,pid,cPerson) values ('预算合同科',',1,3,',11,2,3,2);
+[2015-05-30 11:23:42] insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (109,'测试',',67,',2);
+[2015-05-30 11:23:42] insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (109,144,'开始',',146,',0,1,10,',67,','',',2009,',1,1,2009,2);
+[2015-05-30 11:27:08] insert into SYS_CM_FN_TREE (pid,nodeName,parentPath,treeOrder,depth,cPerson) values ('26','流程实例管理',',1,2,11,26,',5,4,2);
+[2015-05-30 11:29:50] insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,ext,type,state,users,roles,owner,parentPath,treeOrder,depth,pid,cPerson) values (109,146,'参与人会签',',145,',2010,'',13,1,',',',',',17,63,',',2009,',2,1,2009,67);
+[2015-05-30 11:29:50] insert into dbo.SYS_WF_INSTANCE (state,nodeName,owner,users,parentPath,treeOrder,depth,pid,cPerson) values (100,'17',',17,',',17,',',2009,2011,',1,2,2011,67);
+[2015-05-30 11:29:50] insert into dbo.SYS_WF_INSTANCE (state,nodeName,owner,users,parentPath,treeOrder,depth,pid,cPerson) values (100,'63',',63,',',63,',',2009,2011,',2,2,2011,67);
+[2015-05-30 12:52:44] insert into SYS_WF_INDEX (type,nodeName,parentPath,treeOrder,depth,pid,cPerson) values ('1','开工报告会签',',1,4,106,',4,3,106,63);
+[2015-05-30 21:53:49] insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (107,'测试',',67,',2);
+[2015-05-30 21:53:49] insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (107,147,'预算合同科发起会签',',149,',0,1,10,',67,','',',2014,',1,1,2014,2);
+[2015-05-30 23:04:10] insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,ext,type,state,users,roles,owner,parentPath,treeOrder,depth,pid,cPerson) values (107,149,'参与人会签',',149,148,',2015,'',13,1,',',',',',13,',',2014,',2,1,2014,67);
+[2015-05-30 23:04:10] insert into dbo.SYS_WF_INSTANCE (state,nodeName,owner,users,parentPath,treeOrder,depth,pid,cPerson) values (100,'13',',13,',',13,',',2014,2016,',1,2,2016,67);
+[2015-05-30 23:46:44] delete SYS_WF_RULE where oid=149;

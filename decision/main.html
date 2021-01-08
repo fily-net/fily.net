@@ -1,0 +1,181 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>国际动漫IP创意站评估系统</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="国际动漫IP创意站评估系统" />
+        <meta name="keywords" content="国际动漫IP创意站评估系统" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/icon.css" />
+        <link type="text/css" rel="Stylesheet" href="css/font-awesome.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal_ext.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/home.css" />
+        <link type="text/css" rel="Stylesheet" href="script/lib/codemirror.css" />
+        <link type="text/css" rel="Stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <div class="main-root">
+            <div class="main-head">
+                <div class="logo" style="float: left; font-size: 24px; text-indent: 10px;color: #1AC4E5;height:100%;position:relative;">
+                    <img src="./images/logo.png" style="height: 60px;margin:10px; width: 160px;position:absolute;" />
+                    <span style="padding-left: 180px;">国际动漫IP创意站</span>
+                </div>
+                <a class="info" id="info" url="View/user/UserInfo.js"></a>
+                <div class="menu">
+                    <ul>
+                        <li><a url="View/home/Index.js" class="fa fa-tachometer">我的工作台</a></li>
+                        <li><a url="View/bug/BugList.js" class="fa fa-bug">提交系统Bug</a></li>
+                        <li><a url="View/oa/HolidayQuery.js" class="fa fa-calendar">节假日</a></li>
+                        <li><a name="logout" class="fa fa-power-off">注销</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-body">
+                <div class="main-body-left">
+                    <ul id="main-body-nav"></ul>
+                </div>
+                <div class="main-body-center" id="main-body-center"></div>
+                <div class="main-body-right scroll-webkit" id="user-list"></div>
+            </div>
+            <div class="main-foot"></div>
+        </div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_event_handler.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script src="script/meeko_list.js" type="text/javascript"></script>
+    <script src="script/excanvas.js" type="text/javascript"></script>
+    <script src="script/socket.io.min.js" type="text/javascript"></script>
+    <script src="script/ext/ZeroClipboard.js" type="text/javascript"></script>
+    <script src="script/kindEditor/kindeditor.js" type="text/javascript"></script>
+    <script src="script/lib/codemirror.js" type="text/javascript"></script>
+    <script src="script/mode/javascript/javascript.js" type="text/javascript"></script>
+    <script src="script/mode/scheme/scheme.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            if (!$.ck.get('SESSIONID')) { window.location.href = 'index.html'; return; }
+            var _mTips = {}, dataTree, currTips, currID, currLi, view;
+            function onInit() {
+                $.global.setImgPath('');
+                $.Util.ajax({
+                    args: 'm=SYS_CM_HOME&action=getUserInfos&dataType=json',
+                    onSuccess: function (d) {
+                        var _sAry = d.get(0), _dAry = [], _scAry = eval(d.get(2) || '[]'), _users = eval(d.get(3) || '[]');
+                        if (_sAry) { _dAry = eval(_sAry); }
+                        if (!d.get(1)) { MTips.show('您还未登陆, 请先登录!', 'warn'); setTimeout(function () { window.location.href = 'index.html'; }, 5000); return; }
+                        loadMenu(new $.Util.HashTree({ dataSrc: _dAry, key: 'id' }));
+                        loadUserInfo(eval(d.get(1))[0]); addShortCuts(_scAry);
+                        view = new $.UI.View({ p: $('main-body-center'), url: 'View/decision/IndexGrid.js' });
+                    },
+                    onError: function (d) { MTips.show(d.data, 'warn'); window.location.href = 'index.html'; }
+                });
+                //new $.UI.Chat({ p: $('user-list') });
+            }
+
+            function loadUserInfo(info) {
+                $('info').h('<img class="avatar" src="images/avatar/' + info.avatar + '" /><span class="title">' + info.cName + '</span>').attr('title', '点击查看我个人的信息');
+            }
+
+            function loadMenu(tree) {
+                var _rAry = tree.rootAry, _objs = tree.hashObjs, _eNav = $('main-body-nav');
+                dataTree = tree;
+                for (var i = 0, _len = _rAry.length; i < _len; i++) {
+                    var _curr = _objs[_rAry[i]], _obj = _curr.obj;
+                    var _title = _obj.nodeName;
+                    if (_title) { _title = '<a url="' + _obj.url + '">' + _title + '</a>'; }
+                    var _eLi = _eNav.adElm('', 'li').h('<a class="icon ' + _obj.icon + '" url="' + _obj.url + '"></a><div>' + _title + '</div>').attr('idx', _obj.id).attr('index', i);
+                    addMenuTips(_eLi, _curr.next, _obj);
+                }
+            }
+
+            function addShortCuts(ary) {
+                for (var i = 0, _len = ary.length; i < _len; i++) {
+
+                }
+            }
+
+            function addMenuTips(eLi, next, obj) {
+                if (!next) { return; }
+                var _pos = eLi.pos(), _x = _pos.x + _pos.w, _y = _pos.y, _sons = next.trim().split(' '), _sStr = '<label></label><div>';
+                for (var i = 0, _iLen = _sons.length; i < _iLen; i++) {
+                    var _temp = dataTree.hashObjs[_sons[i]], _tempStr = '', _tSons = _temp.next.trim();
+                    if (_tSons) {
+                        var _sAry = _tSons.split(' ');
+                        for (var _s = 0, _sLen = _sAry.length; _s < _sLen; _s++) {
+                            var _sObj = dataTree.hashObjs[_sAry[_s]].obj;
+                            _tempStr += '<a url="' + _sObj.url + '" href onclick="return false;">' + _sObj.nodeName + '</a>';
+                        }
+                        _tempStr = '<div>' + _tempStr + '</div>';
+                    }
+                    _sStr += '<div><span>' + _temp.obj.nodeName + '</span>' + _tempStr + '</div>';
+                }
+                _sStr += '</div>';
+                _mTips[obj.id] = $DB.abElm('', 'div').cn('menuLV2').css('left:' + _x + 'px;top:' + _y + 'px;').h(_sStr);
+            }
+            $DB.evt('mouseover', function (e) {
+                var e = $.e.fix(e), _e = e.t;
+                if (findLV(_e)) { return; }
+                var _eLi = findNav(_e);
+                if (_eLi) {
+                    var _idx = _eLi.attr('idx');
+                    if (currID == _idx) { return; }
+                    var _tips = _mTips[_idx];
+                    if (_tips) {
+                        if (currTips != _tips && currTips) { currTips.hide(); }
+                        _tips.show().css('width:auto;');
+                        currTips = _tips; currID = _idx;
+                        if (currLi) { currLi.dc('hover'); }
+                        currLi = _eLi;
+                        currLi.ac('hover');
+                    } else {
+                        disTips();
+                    }
+                } else {
+                    if (currTips != _tips && currTips) { disTips(); }
+                }
+                e.stop();
+            }).evt('click', function (e) {
+                var e = $.e.fix(e), _e = e.t;
+                var _tn = _e.tagName;
+                if (_tn == 'FONT') { _e = _e.pn(); _tn = _e.tagName; }
+                if (_tn == 'IMG') { _e = _e.pn(); _tn = _e.tagName; }
+                if (_tn == 'SPAN') { _e = _e.pn(); _tn = _e.tagName; }
+                var _url = (_e.attr('url') || '').trim();
+                if (_url) {
+                    var _attrs = _e.attributes, _args = {};
+                    for (var i = 0, _len = _attrs.length; i < _len; i++) {
+                        var _attr = _attrs[i]; _args[_attr.name] = _attr.value;
+                    };
+                    view.loadView(_args);
+                    disTips();
+                } else {
+                    switch (_e.attr('name')) {
+                        case 'logout':
+                            MConfirm.setWidth(250).show('<font color="red">确定注销该账号?</font>').evt('onOk', function () {
+                                $.Util.ajax({ args: 'm=SYS_CM_USERS&action=logout', onSuccess: function () { $.ck.clear(); MTips.show('注销成功', 'ok'); setTimeout(function () { window.location.href = 'index.html'; }, 1000); }, onError: function () { MTips.show('注销失败!', 'error'); } });
+                            });
+                            break;
+                    }
+                }
+            });
+
+            function findLV(_e) {
+                if (_e.tagName == 'BODY') { return; }
+                if (_e.tagName == 'DIV' && _e.className == 'menuLV2') { return _e; } else { return findLV(_e.pn()); }
+            }
+            function findNav(_e) {
+                if (_e.tagName == 'BODY') { return; }
+                if (_e.tagName == 'LI' && _e.attr('idx')) { return _e; } else { return findNav(_e.pn()); }
+            }
+            function disTips() {
+                if (currLi) {
+                    currLi.dc('hover');
+                }
+                if (currTips) { currTips.hide(); } currTips = null; currID = null;
+            }
+            onInit();
+        });
+    </script>
+</html>

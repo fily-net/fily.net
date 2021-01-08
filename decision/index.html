@@ -1,0 +1,203 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>国际动漫IP创意站</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="国际动漫IP创意站" />
+        <meta name="keywords" content="国际动漫IP创意站" />
+        <link type="text/css" rel="Stylesheet" href="css/meeko.css" />
+        <link type="text/css" rel="Stylesheet" href="css/font-awesome.css" />
+        <link type="text/css" rel="Stylesheet" href="css/skin/normal.css" />
+        <style type="text/css">
+            html{background:url("images/login/glow.png") no-repeat 50% 50%;_background:none;background-color:#0D7BD5;height: 100%;margin: 0;padding: 0;border: 0;outline: 0;}
+            body {color: rgba(255,255,255,.7);font: 13px/22px "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;text-shadow: 0 1px 0 rgba(0,0,0,.3);}
+            .main {width: 540px;height: 300px; position: absolute;top: 50%;left: 50%;margin: -150px 0 0 -270px;}
+            .main>.logo{ float: left;width: 245px;height: 99px;color: rgba(255,255,255,.8); }
+            .main>.logo>.logo-img{ width: 245px;height: 89px; }
+            .main>.logo>.logo-info{ width: 245px;height: 50px; }
+            .main>.form{ float: right;width: 262px;height: 144px;overflow:hidden; padding: 10px 0px;}
+            .main>.form>.form-list{ overflow: hidden; padding: 0px; }
+            .main>.form>.form-list>FORM { float:left;width: 262px;}
+            .main>.form .pwd{ ime-mode:disabled; }
+            .main>.form .pwd-mark { float:right; display: inline-block; width:16px; height:16px; margin-top:-36px; margin-left:-30px;}
+            .main>.form .txt
+            {
+		        display:block;
+		        width:250px;
+		        padding:10px 5px;
+		        margin:10px 0px;
+		        font-size:14px;
+		        line-height:18px;
+		        background:#e8f4fc;
+		        border:1px solid #0d7bd5;
+		        color:#888;
+		        cursor:text;
+		        box-shadow:0 1px 0 rgba(255,255,255,.3),0 1px 3px rgba(0,0,0,.3) inset;
+		        background-clip:padding-box;
+		        -webkit-border-radius: 5px;
+                -moz-border-radius: 5px; 
+                border-radius: 5px; 
+                outline: none; 
+                text-shadow: 0px 1px 0px #fff; 
+                -webkit-transition: .3s ease-in-out; 
+                -moz-transition: .3s ease-in-out; 
+                -o-transition: .3s ease-in-out; 
+	        }
+	        .main>.form .txt:focus {border: 1px solid #fafafa;-webkit-box-shadow: 0px 0px 6px #007eff;-moz-box-shadow: 0px 0px 5px #007eff;box-shadow: 0px 0px 5px #007eff;}
+	        .main>.form .btn{
+	            background:#1e95e5; margin-top:10px;
+	            color:#b7d4ec;
+	            color:rgba(255,255,255,.7);
+	            box-shadow:0 1px 0 rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.15) inset;
+	            border:1px solid #147dcd;
+	            cursor:pointer;
+	            display:inline-block;
+	            font-size:14px;
+	            line-height:18px;
+	            text-shadow:0 1px 0 rgba(0,0,0,.2);
+	            padding:6px 15px;
+	            text-align:center;
+	            vertical-align:middle;
+	            border-radius:5px;
+	            float:left;
+	            *color:#b7d4ec;
+	            -webkit-appearance:none;
+	            outline:none;
+	
+	        }
+            .main>.form .btn:active{ background:#1d8fdb;box-shadow:0 1px 0 rgba(255,255,255,.15);outline:none;outline:0px; }
+            .main>.form .btn:hover{ box-shadow:0 0 10px rgba(255,255,255,.5),0 1px 0 rgba(255,255,255,.15) inset; }
+            .main>.form .btn:focus{ outline:none; }
+            .count { position: fixed; bottom: 30px; right: 40px; }
+            .forgetPWD>DIV { padding:10px;}
+            .forgetPWD>DIV>IMG { float:left; width:40px; height:40px; }
+            .forgetPWD>DIV>DIV { float:left; height:100%; }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div style="font-size:38px;font-weight: bold;padding: 0px 0px 60px;"><span>国际动漫IP创意站</span></div>
+            <div class="logo">
+                <img class="logo-img" style="margin-top: 15px;" src="./images/logo.png" />
+            </div>
+            <div class="form">
+                <div class="form-list" id="forms">
+                    <form class="login" onsubmit="return false;" >
+                        <input id="fc0" class="txt" type="text" name="uid" reg="\S{1,}" tabindex="1" placeholder="用 户 名" default="用 户 名" error="用户名不能为空"  />
+                        <input class="txt pwd" type="password" name="pwd" reg="\S{3,}" tabindex="2" error="密码卡必须四位以上" placeholder="密 码"  />
+                        <span class="pwd-mark"></span>
+                        <input class="btn" type="button" tabindex="3" value="登录" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="count">累计访问量：<span id="count">正在加载...</span></div>
+    </body>
+    <script src="script/meeko_cp.js" type="text/javascript"></script>
+    <script src="script/meeko_ui.js" type="text/javascript"></script>
+    <script src="script/meeko_util.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.Util.ajax({
+                url: 'api.aspx',
+                ifCheckCookie: false,
+                args: 'm=SYS_TABLE_BASE&action=getByID&table=SYS_CM_GLOBAL_TABLE&id=447&dataType=json',
+                onSuccess: function (d) {
+                    $('count').h('<span style="font-weight:bold;font-size:18px;color:red;">'+JSON.parse(d.get(0))[0].state+"</span> 次");
+                }
+            });
+
+            if ($.ck.get('ifSave') && $.ck.get('SESSIONID')) { window.location.href = 'main.html'; }
+            var currLoginTab = $('tab-name');
+            $('fc0').focus();
+            $DB.evt('click', function (e) {
+                var e = $.e.fix(e), _e = e.t, _idx = +_e.attr('idx');
+                if (_e.className.indexOf('btn') !== -1 ) { submit(_e); return; }
+                if (_e.attr('part') == 'checkbox') { if (_e.className == 'checked-mark') { _e.dc('checked-mark').ac('checkbox-mark'); } else { _e.ac('checked-mark').dc('checkbox-mark'); } }
+                if (_e.tagName == 'A' && !isNaN(_idx)) { $('forms').ease(['margin-left'], [-(_idx * 300)], 300, 'easeOutQuart', { e: function () { console.log($('fc' + _idx)); $('fc' + _idx).focus(); } }); }
+                if (_e.tagName == 'LI' && _e.className != 'curr') {
+                    if (_e.ns()) { _e.ns().dc('curr'); } else { _e.ps().dc('curr'); };
+                    _e.ac('curr'); currLoginTab.ac('dn'); currLoginTab = $(_e.attr('idx')); currLoginTab.dc('dn'); currLoginTab.chr(0).chr(1).focus();
+                }
+                ValidateTips.hide();
+            }).evt('keyup', function (e) {
+                var e = $.e.fix(e), _e = e.t; if (e.code == 13) { submit(_e); }
+            });
+            $('forms').evt('onfocus', function (e) {
+                var e = $.e.fix(e), _e = e.t;
+                if (_e.tagName == 'INPUT') {
+                    _e.pn().ac('focus');
+                }
+                e.stop();
+            }).evt('blur', function (e) {
+                var e = $.e.fix(e), _e = e.t;
+                if (_e.tagName == 'INPUT') {
+                    _e.pn().dc('focus');
+                }
+            });
+            function submit(_e) {
+                var _inputs = findForm(_e), _vals = '', _action = _inputs.className.trim(), _vObj = {}, _fInput;
+                for (var i = 0, _len = _inputs.length; i < _len; i++) {
+                    var _input = $(_inputs[i]), _reg = _input.attr('reg'), _pos = _input.pos(), _val = _input.value;
+                    if (!_reg || !_pos.x) { continue; }
+                    if (!(new RegExp(_reg)).test(_val) || _val == _input.attr('default')) {
+                        _input.focus();
+                        ValidateTips.setText(_input.attr('error') || '非法输入!').setPos(_pos.x, _pos.y + _pos.h + 10).show();
+                        $('main').ac('pulse'); setTimeout(function () { $('main').dc('pulse'); }, 100);
+                        return false;
+                    }
+                    _vals += '&' + _input.attr('name') + '=' + _val;
+                    _vObj[_input.attr('name')] = _val;
+                    if (!_fInput && _input.type == 'password') { _fInput = _input; }
+                }
+                ValidateTips.hide(); showMask(true);
+                $.Util.ajax({
+                    url: 'api.aspx',
+                    ifCheckCookie: false,
+                    args: 'm=SYS_CM_USERS&action=' + _action + _vals,
+                    onSuccess: function (d) {
+                        showMask(false);
+                        if (_action == 'forgetPWD') {
+                            _inputs.h('<div><img src="images/icon/40_40/success_iconx.png" /><div>发送邮件成功(<font color="red">如果十分钟之后还未收到邮件，可能系统被当成垃圾邮件了哦</font>)</div></div>');
+                        } else {
+                            $.Util.ajax({
+                                url: 'api.aspx',
+                                ifCheckCookie: false,
+                                args: 'm=SYS_TABLE_BASE&action=countState&table=SYS_CM_GLOBAL_TABLE&id=447&dataType=json',
+                                onSuccess: function (d) {
+                                    console.log(d);
+                                }
+                            });
+
+                            if ($.ck.get('SESSIONID')) { $.ck.remove('SESSIONID'); }
+                            $.ck.set('SESSIONID', d.get(0).trim());
+                            window.location.href = 'main.html';
+                        }
+                    },
+                    onError: function (d) {
+                        showMask(false);
+                        MTips.show(d.data || '账号信息错误', 'error'); _fInput.focus();
+                        for (var i = 0, _len = _inputs.length - 1; i < _len; i++) { if (_inputs[i].type == 'password') { _inputs[i].value = ''; } }
+                    }
+                });
+            }
+            function findForm(_e) { if (_e.tagName == 'FORM') { return _e; } else { return findForm(_e.pn()); } }
+            function showMask(ifShow) {
+                if (ifShow) {
+                    _mask = new $.UI.Mask({ p: $DB, alpha: 12 });
+                    _mask.eContent.cn('tac').css('padding:20px;z-index:20;').h('<img src="images/loading/gif/loading51.gif" />');
+                } else {
+                    if (_mask) { _mask.remove(); _mask.eContent.r(); _mask = null; }
+                }
+            }
+
+            function setBG(index) {
+                var _index = index || 1;
+                if (index > 4) { _index = 1; }
+                document.documentElement.style.background = 'url("images/login/bg/' + _index + '.jpg") no-repeat';
+                setTimeout(function () { _index++; setBG(_index);}, 2000);
+            }
+           // setBG();
+        });
+    </script>
+</html>

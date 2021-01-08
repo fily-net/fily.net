@@ -1,0 +1,2 @@
+insert into SYS_WH_MS (scanCode,code,nodeName,danwei,highPrice,guige,note,parentPath,treeOrder,depth,pid,cPerson) values ('20150717160638','','','只',0,'','',',1,4,14,',6,3,14,2);
+insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('Jellyfish.jpg','2015071704072118117','jpg','Jellyfish','test',775702,1,',1,4,',133,2,4,2);

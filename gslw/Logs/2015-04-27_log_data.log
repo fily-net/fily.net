@@ -1,0 +1,2 @@
+update SYS_WF_INDEX set mPerson=2, mTime=getdate(),json='[]' where id=0;
+update YH_BASE_STATION set mPerson=2, mTime=getdate(),status=349,type=353 where id=3;

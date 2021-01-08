@@ -1,0 +1,407 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>第十二届上海国际青少年互动友谊营“友谊使者”选拔</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="第十二届上海国际青少年互动友谊营“友谊使者”选拔" />
+        <meta name="keywords" content="第十二届上海国际青少年互动友谊营“友谊使者”选拔" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <style type="text/css">
+            html {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 0;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                font-family: sans-serif;
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+
+            html, body {
+                width:100%;
+                height:100%;
+                padding:0px;
+                margin:0px;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+            .music{
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                z-index: 100;
+            }
+
+            @keyframes zmdi-spin {
+                0% {transform:rotate(0deg);}
+                100% {transform:rotate(360deg);}
+            }
+            @-webkit-keyframes zmdi-spin {
+                0% {transform:rotate(0deg);}
+                100% {transform:rotate(360deg);}
+            }
+
+            @keyframes moving-left {
+                0% {left: 0px;}
+                100% {left:10px;}
+            }
+            @-webkit-keyframes moving-left {
+                0% {left: 0px;}
+                100% {left: 10px;}
+            }
+
+            @keyframes moving-right {
+                0% {right: 0px;}
+                100% {right:10px;}
+            }
+            @-webkit-keyframes moving-right {
+                0% {right: 0px;}
+                100% {right: 10px;}
+            }
+
+            .music.playing{
+                animation: zmdi-spin 1.5s infinite linear;
+            }
+            .page {
+                position:absolute;
+                left: 0px;
+                top: 0px;
+                width: 100%;
+                padding: 0px;
+                margin: 0px;
+                opacity: 1;
+                -webkit-transition: all ease-in-out 1.0s;
+                -o-transition: all ease-in-out 1.0s;
+                transition: all ease-in-out 1.0s;
+            }
+            .hidden {
+                z-index: -1;
+                opacity: 0.1;
+                left: -500px;
+            }
+            .img1, .img2 {
+                margin-left: 0px;
+                margin-right: 0px;
+                -webkit-transition: all ease-in 1.6s;
+                -o-transition: all ease-in 1.6s;
+                transition: all ease-in 1.6s;
+            }
+            .hidden .img1{
+                margin-left: -1000px !important;
+            }
+            .hidden .img2{
+                margin-right: -600px !important;
+            }
+            .arrow {
+                position: absolute;
+                width: 48px;
+                height: 48px;
+                top: 40%;
+                z-index: 100;
+                -webkit-transition: all ease-in-out 1.0s;
+                -o-transition: all ease-in-out 1.0s;
+                transition: all ease-in-out 1.0s;
+            }
+            .arrow-left{
+                left: 0px;
+                animation: moving-left 0.8s infinite linear;
+            }
+            .arrow-right{
+                right: 0px;
+                animation: moving-right 0.8s infinite linear;
+            }
+            .form {
+                position: absolute;
+                width: 100%;
+                bottom: 8vh;
+                background-color: transparent;
+                z-index: 10;
+                color: #FFF;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                flex-wrap: wrap-reverse;
+                align-items: center;
+                font-size: 14px;
+            }
+
+            .form > div {
+                display: flex;
+                justify-content:center;
+                align-items:center;
+                width:100%;
+                overflow:hidden;
+            }
+            .form > div * {
+                float: left;
+            }
+            .form>div>label{
+                width: 80px;
+                line-height: 36px;
+            }
+            .form img{
+                width: 85%;
+                margin: 20px;
+                height: 120px;
+            }
+            .img {
+                width:100%;
+            }
+            .label {
+                display:inline-block;
+                width:30%;
+            }
+            input, textarea, select{
+                background-color: transparent !important;
+                vertical-align: middle;
+                font-size: 14px;
+                overflow: hidden;
+                border: 1px solid #FFF;
+                color: #000;
+                border-radius: 3px;
+                padding: 3px 8px;
+                margin: 2px 0px;
+                /*width: 100%;*/
+                width: 220px;
+                text-align: left;
+                box-sizing: border-box;
+            }
+            .btn {
+                width: 80%;
+                margin: 0px 40px;
+                height: 30px;
+                border: 1px solid #714880;
+                color: #FFF;
+                text-align: center;
+                font-weight:bolder;
+                background-color: #714880 !important;
+            }
+                .btn:active, .btn:hover {
+                    /*
+                    background-color: #714880;
+                    color: #FFF;*/
+                }
+            ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                color: #DEDDDD;
+            }
+            :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                color: #DEDDDD;
+                opacity:  1;
+            }
+            ::-moz-placeholder { /* Mozilla Firefox 19+ */
+                color: #DEDDDD;
+                opacity:  1;
+            }
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #DEDDDD;
+            }
+            :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+                color: #DEDDDD;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page0" class="page hidden">
+            <img class="img" src="./images/hb/index_bg.png" />
+            <img id="arrow-left" class="arrow arrow-right" src="./images/hb/arrow_right.png" style="transform: rotate(180deg);" />
+            <div class="form">
+                <img class="img1" src="./images/hb/c001.png" style="height:160px;" />
+                <img class="img2" src="./images/hb/c002.png" />
+            </div>
+        </div>
+        <div id="page1" class="page hidden">
+            <img class="img" src="./images/hb/xuzi_bg.png" />
+            <img id="to-index" class="arrow arrow-right" src="./images/hb/arrow_right.png" style="transform: rotate(180deg);" />
+            <div class="form" style="top: 40vh;height: 250px;">
+                <img class="img1" src="./images/hb/xuzi_tips.png" style="height:160px;" />
+                <div><input id="confirm" type="button" class="btn" value="确认" /></div>
+            </div>
+        </div>
+        <div id="page2" class="page hidden">
+            <img class="img" src="./images/hb/weixin_bg.png" />
+            <img id="arrow-right" class="arrow arrow-right" src="./images/hb/arrow_right.png" />
+            <form class="form" id="form">
+                <div><label>姓名</label><input name="name" type="text" /></div>
+                <div>
+                    <label>性别</label>
+                    <select name="sex">
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </div>
+                <div><label>出生日期</label><input name="birthday" type="date" value="2016-01-01" /></div>
+                <div><label>所在学校</label><input name="school" type="text" placeholder="**区****学校" /></div>
+                <div>
+                    <label>所在年级</label>
+                    <select name="grade">
+                        <option>初中三年级</option>
+                        <option>高中一年级</option>
+                        <option>高中二年级</option>
+                        <option>高中三年级</option>
+                    </select>
+                </div>
+                <div><label>联系电话</label><input name="phone" type="tel" placeholder="" /></div>
+                <div><label>电子邮箱</label><input name="email" type="email" placeholder="" /></div>
+                <div><label>特长及才艺</label><textarea name="techang" placeholder="" ></textarea></div>
+                <div><input id="submit" type="button" class="btn" value="报名提交" /></div>
+            </form>
+        </div>
+        <!--<img id="play" class="music playing" src="./images/music.svg" />-->
+        <audio id="audio" controls="controls" loop="loop" autoplay="autoplay" preload="load" style="width:0px; height:0px;">
+            <source src="audio/imeatART.ogg" type="audio/ogg">
+            <source src="audio/imeatART.mp3" type="audio/mpeg">
+            <source src="audio/imeatART.wav" type="audio/vnd.wave">
+            第十二届上海国际青少年互动友谊营“友谊使者”选拔
+        </audio>
+        <script src="script/zepto.min.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+            (function () {
+                var _page0 = $('#page0'),
+                    _page1 = $('#page1'),
+                    _page2 = $('#page2');
+
+                var _currIndex = 0;
+
+                var _submiting = false;
+                _page0.removeClass("hidden");
+
+                var _start = {}, _end = {};
+
+                $(document).on('touchstart', function (event){
+                    //event.preventDefault();
+                    var touch = event.touches[0];
+                    _start = {
+                        x: touch.pageX,
+                        y: touch.pageY,
+                        time: +new Date
+                    };
+                });
+
+                $(document).on('touchmove', function (event){
+                    //event.preventDefault();
+                    // 当屏幕有多个touch或者页面被缩放过，就不执行move操作
+                    if (event.touches.length > 1 || event.scale && event.scale !== 1) return;
+                    var touch = event.touches[0];
+                    _end = {
+                        x: touch.pageX - _start.x,
+                        y: touch.pageY - _start.y
+                    };
+                });
+
+                $(document).on('touchend', function (event){
+                    // 滑动的持续时间
+                    var duration = +new Date - _start.time;
+                    if (Number(duration) > 100) {
+                        // 判断是左移还是右移，当偏移量大于50时执行
+                        if (_end.x > 50) {
+                            _currIndex--;
+                        } else if (_end.x < -50) {
+                            _currIndex++;
+                        }
+                        goPage(_currIndex);
+                    }
+                });
+
+                function goPage(page) {
+                    switch (page) {
+                        case 0:
+                            _page0.removeClass('hidden');
+                            _page1.addClass('hidden');
+                            _page2.addClass('hidden');
+                            break;
+                        case 1:
+                            _page0.addClass('hidden');
+                            _page1.removeClass('hidden');
+                            _page2.addClass('hidden');
+                            break;
+                        case 2:
+                            _page0.addClass('hidden');
+                            _page1.addClass('hidden');
+                            _page2.removeClass('hidden');
+                            break;
+                    }
+                    _currIndex = page;
+                }
+
+                $("#arrow-left").on('click', function (){
+                    goPage(1);
+                });
+
+                $("#to-index").on('click', function () {
+                    goPage(0);
+                });
+                $("#arrow-right").on('click', function (){
+                    goPage(1);
+                });
+
+                $("#confirm").on('click', function () {
+                    goPage(2);
+                });
+
+                /*
+                $("#play").on('click', function (){
+                    if($("#play")[0].classList.contains('playing')){
+                        $("#audio")[0].pause();
+                    } else {
+                        $("#audio")[0].play();
+                    }
+                    $("#play").toggleClass("playing");
+                });*/
+
+                $("#submit").on('click', function (){
+                    if(_submiting){
+                        alert('正在提交报名中...');
+                    }
+                    _submiting = true;
+                    var _form = $("#form")[0];
+                    var _data = {
+                        name: _form.name.value,
+                        sex: _form.sex.value,
+                        birthday: _form.birthday.value,
+                        school: _form.school.value,
+                        grade: _form.grade.value,
+                        phone: _form.phone.value,
+                        email: _form.email.value,
+                        techang: _form.techang.value
+                    }
+                    if(!_data.name||!_data.sex||!_data.birthday||!_data.school||!_data.grade||!_data.phone||!_data.email||!_data.techang){
+                        alert('报名字段不能为空！');
+                        return false;
+                    }
+                    var _ds = '';
+                    for (var key in _data) {
+                        _ds += '&' + key + "=" + _data[key];
+                    }
+                    //console.log(_data);
+                    $.ajax({
+                        type: 'POST',
+                        url: 'Module/TJ_ENROLL.aspx?action=enroll&' + _ds,
+                        // post payload:
+                        data: JSON.stringify({}),
+                        contentType: 'application/json',
+                        success: function (data) {
+                            _submiting = false;
+                            if (data.code == 0) {
+                                alert(data.data);
+                            } else {
+                                alert(data.msg);
+                            }
+                            _form.reset();
+                        },
+                        error: function (xhr, type) {
+                            _submiting = false;
+                            alert('报名失败, 邮箱格式不对，请重新输入报名信息!')
+                        }
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html>

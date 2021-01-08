@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="ch">
+    <meta charset="UTF-8">
+    <title>东黎绒毛制品有限公司--首页</title>
+    <link type="text/css" href="css/reset.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="js/jScrollbar.jquery.css" type="text/css" />
+</head>
+<body>
+
+<div class="header">
+    <div class="chDiv"><a href="#"><span>Chinese</span></a><a href="#"><span>|</span></a><a href="#"><span>English</span></a></div>
+    <ul id="nav" class="nav clearfix" >
+        <li class="nLi">
+            <h3><a href="index.html" target="_blank" class="subb">首页</a></h3>
+        </li>
+        <li class="nLi on">
+            <h3>
+                <a href="javascript:;" target="_blank" class="subb">关于我们</a>
+                <ul class="sub">
+                    <li><a href="gsjj_01.html">公司介绍</a></li>
+                    <li><a href="qywh_02.html">企业文化</a></li>
+                    <li><a href="gsry_03.html">公司荣誉</a></li>
+                    <li><a href="cpjj_04.html">产品介绍</a></li>
+                    <li><a href="qybz_05.html">质量保证</a></li>
+                </ul>
+            </h3>
+        </li>
+        <li class="nLi">
+            <!-- 假设当前频道为“预告片”，手动或后台程序添加titOnClassName类名（默认是'on'），相当于设置参数defaultIndex:1。若同时设置参数returnDefault:true，则鼠标移走后0.3秒返回当前频道 -->
+            <h3><a href="brand.html" target="_blank" class="subb">品牌与产品</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="media.html" target="_blank" class="subb">媒体播放</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="javascript:;" target="_blank" class="uno"><img src="images/logo.png"> </a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="zxdt.html" target="_blank" class="subb">资讯动态</a></h3>
+
+        </li>
+        <li class="nLi">
+            <h3><a href="message.html" target="_blank" class="subb">留言板</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="javascript:;" target="_blank" class="subb">网上商城</a></h3>
+        </li>
+        <li class="nLi">
+            <h3><a href="contactus.html" target="_blank" class="subb">联系我们</a></h3>
+        </li>
+    </ul>
+</div>
+<div class="lunbo">
+    <img src="images/bgImg.png" width="100%">
+    <a href="#" style="position: absolute;top:50%;margin-top:-84px;"><img src="images/arr01.png"> </a>
+    <a href="#" style="position: absolute;right:0;top:50%;margin-top:-84px;"><img src="images/arr02.png"> </a>
+    <div class="boxOne">
+    </div>
+    <div class="boxTwo">
+       <div class="cpjs">
+
+       </div>
+        <div class="jScrollbar3">
+            <div class="jScrollbar_mask">
+                <span class="p1">
+                    原料：山羊绒固其细而柔软，轻而保暖的特性，被誉为“纤维宝石”“软
+                    黄金”。加之人们回归自然的消费需求，使其成为高档的纺织材料。公司
+                    构建了庞大的原绒收购网络和稳定的销售市场。由于公司所处得天独厚的
+                    产地优势，使得产品优质稳定、可靠，成为意大利、英国、日本等地的热
+                    销产品。
+                </span>
+                <img src="images/img0.jpg" class="img1">
+                <span class="p2">
+                    无毛绒：公司牢固树立“质量第一”的方针，把产品质量视为企业的生命。对无毛绒加工、制作、工艺等各个方面都制
+定了高于国家纺织工业部颁布的质量标准。如今，公司生产的“白中白”无毛绒已运销意大利、英国、日本等地，在国
+际羊绒界享有极高的信誉，成为众多国际大客户争相购买的热销品牌。
+                </span>
+
+                <img src="images/img1.jpg" class="img2"> <img src="images/img1.jpg" class="img2"> <img src="images/img1.jpg" class="img2">
+            </div>
+            <div class="jScrollbar_draggable">
+                <a href="#" class="draggable"></a>
+            </div>
+
+            <div class="clr"></div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <ul class="ulCon">
+        <li class="li0"><a href="javascript:;"></a></li>
+        <li class="li1"><a href="javascript:;"></a></li>
+        <li class="li2"><a href="javascript:;"></a></li>
+    </ul>
+</div>
+<div class="footer">版权所有:赤峰东黎绒毛制品有限公司 All Rights Reserved:SUNRISE CASHMERE INC.技术支持:天启网络 网站备案号:蒙ICP备 13003182号</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery-mousewheel.js"></script>
+<script type="text/javascript" src="js/jScrollbar.jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.jScrollbar3').jScrollbar();
+    });
+</script>
+<script id="jsID" type="text/javascript">
+
+    jQuery("#nav").slide({
+        type:"menu",// 效果类型，针对菜单/导航而引入的参数（默认slide）
+        titCell:".nLi", //鼠标触发对象
+        targetCell:".sub", //titCell里面包含的要显示/消失的对象
+        effect:"slideDown", //targetCell下拉效果
+        delayTime:300 , //效果时间
+        triggerTime:0, //鼠标延迟触发时间（默认150）
+        returnDefault:true //鼠标移走后返回默认状态，例如默认频道是“预告片”，鼠标移走后会返回“预告片”（默认false）
+    });
+</script>
+</body>
+</html>

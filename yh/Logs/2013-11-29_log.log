@@ -1,0 +1,2 @@
+[2013-11-29 13:28:38] insert into SYS_QT_PAPER_TOPIC (title,link,type,paperId,cPerson) values ('填写使用感受','','3','9',2);
+[2013-11-29 13:47:20] update SYS_CM_USER set mPerson=2, mTime=getdate(),uid='喻晓XXX' where id=7;

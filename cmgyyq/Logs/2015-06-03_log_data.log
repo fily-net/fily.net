@@ -1,0 +1,17 @@
+insert into SYS_WF_INDEX (type,nodeName,parentPath,treeOrder,depth,pid,cPerson) values ('1','工程领料会签',',1,4,106,',5,3,106,2);
+insert into SYS_WF_INDEX (type,nodeName,parentPath,treeOrder,depth,pid,cPerson) values ('1','供应商申请流程',',1,4,106,',6,3,106,2);
+insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (110,'测试',',13,16,17,18,19,20,21,22,',2);
+insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (110,156,'项目组提交开工报告',',158,',0,1,10,',13,16,17,18,19,20,21,22,','',',2059,',1,1,2059,2);
+insert into SYS_CM_FILES (nodeName,sysName,extName,origName,catelog,size,type,parentPath,treeOrder,depth,pid,cPerson) values ('开工报告.txt','2015060302522918477','txt','开工报告','test',0,1,',1,4,',104,2,4,13);
+insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,ext,type,state,users,roles,owner,parentPath,treeOrder,depth,pid,cPerson) values (110,158,'参与人会签',',157,',2060,'',13,1,',',',',',13,63,',',2059,',2,1,2059,13);
+insert into dbo.SYS_WF_INSTANCE (state,nodeName,owner,users,parentPath,treeOrder,depth,pid,cPerson) values (100,'13',',13,',',13,',',2059,2061,',1,2,2061,13);
+insert into dbo.SYS_WF_INSTANCE (state,nodeName,owner,users,parentPath,treeOrder,depth,pid,cPerson) values (100,'63',',63,',',63,',',2059,2061,',2,2,2061,13);
+insert into U_EMAIL_13 (nodeName, content, type,cPerson) values ('Meeko系统提醒','系统有任务等您处理，谢谢',1,13);
+insert into U_EMAIL_63 (nodeName, content, type,cPerson) values ('Meeko系统提醒','系统有任务等您处理，谢谢',1,13);
+insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,ext,type,state,users,roles,owner,parentPath,treeOrder,depth,pid,cPerson) values (110,157,'会签结束',',0,',2061,'',11,1,',',',',',',',2059,',3,1,2059,63);
+insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (110,'开工报告审核会签',',13,16,17,18,19,20,21,22,',63);
+insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (110,156,'项目组提交开工报告',',158,',0,1,10,',13,16,17,18,19,20,21,22,','',',2065,',1,1,2065,63);
+insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (110,'开工报告审核会签',',13,16,17,18,19,20,21,22,',63);
+insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (110,156,'项目组提交开工报告',',158,',0,1,10,',13,16,17,18,19,20,21,22,','',',2067,',1,1,2067,63);
+insert into dbo.SYS_WF_INSTANCE (oid,nodeName,owner,cPerson) values (110,'开工报告审核会签',',13,16,17,18,19,20,21,22,',63);
+insert into dbo.SYS_WF_INSTANCE (oid,definedNodeID,nodeName,next,pre,state,type,owner,note,parentPath,treeOrder,depth,pid,cPerson) values (110,156,'项目组提交开工报告',',158,',0,1,10,',13,16,17,18,19,20,21,22,','',',2069,',1,1,2069,63);
